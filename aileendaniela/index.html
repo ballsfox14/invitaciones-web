@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower de Aileen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/aileendaniela/css/styles.css">
+    <link rel="icon" href="data:,">
+
+</head>
+
+<body>
+    <!-- Elementos decorativos -->
+    <div class="decorations">
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle"></div>
+    </div>
+
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <!-- Reproductor de música con texto "Reproducir" -->
+    <div class="music-player" id="musicPlayer">
+        <div class="play-btn" id="playBtn">
+            <i class="fas fa-play"></i>
+        </div>
+        <span class="play-text" id="playText">Reproducir</span>
+        <div class="player-info">
+            <div class="song-title" id="songTitle">Ojos color miel</div>
+            <div class="artist" id="artist">Residente</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="volume-control">
+                <i class="fas fa-volume-up volume-icon"></i>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+            </div>
+        </div>
+        <div class="change-song" id="changeSongBtn">
+            <i class="fas fa-music"></i>
+        </div>
+    </div>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="header-icon">
+            <i class="fas fa-baby"></i>
+        </div>
+        <h1>Baby Shower de Aileen</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Te invitamos a celebrar la llegada de nuestra pequeña Aileen</p>
+    </header>
+
+    <!-- Información del bebé con avatar personalizado -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Nuestra Princesa</h2>
+            <div class="baby-card">
+                <div class="baby-info-container">
+                    <div class="baby-avatar">
+                        <img src="./img/baby.png" alt="Aileen">
+                    </div>
+                    <div class="baby-details">
+                        <div class="baby-name">Bienvenida Aileen Galdamez Castillo!</div>
+                        <div class="baby-info">
+                            <div class="info-item">
+                                <i class="fas fa-calendar-day"></i>
+                                <span>Fecha esperada de nacimiento: <strong>15 de septiembre de 2025</strong></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-user-friends"></i>
+                                <span>Padres: <strong>Francisco Ronal Galdamez Funes & Helen Elizabeth Castillo
+                                        Ayala</strong></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Peso esperado: <strong>3.2 kg</strong></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-ruler"></i>
+                                <span>Estatura esperada: <strong>50 cm</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalles del evento - Sección de Cuándo con fecha actualizada -->
+    <section class="event-details">
+        <div class="container">
+            <h2 class="section-title">Detalles del Evento</h2>
+            <div class="details-grid">
+                <!-- Cuándo - Con fecha actualizada -->
+                <div class="date-card">
+                    <div class="date-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="date-title">Cuándo</h3>
+
+                    <div class="date-content">
+                        <div class="day-value">Sábado, 16</div>
+                        <div class="month-value">Agosto</div>
+                        <div class="year-value">2025</div>
+
+                        <div class="time-container">
+                            <span class="time-icon"><i class="fas fa-clock"></i></span>
+                            <span class="time-text">12:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="countdown-container">
+                        <div class="countdown-label">Faltan para el gran día:</div>
+                        <div class="countdown-grid">
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="days">53</div>
+                                <div class="countdown-unit">Días</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="hours">22</div>
+                                <div class="countdown-unit">Horas</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="minutes">22</div>
+                                <div class="countdown-unit">Minutos</div>
+                            </div>
+                            <div class="countdown-item seconds-item">
+                                <div class="countdown-value" id="seconds">23</div>
+                                <div class="countdown-unit">Segundos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dónde - Diseño mejorado -->
+                <div class="where-card">
+                    <div class="detail-header">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="detail-title">Dónde</h3>
+                    </div>
+                    <div class="detail-content">
+                        <div class="location-name">En casa de mis bisabuelos</div>
+                        <div class="location-address">3VW2+9G, Cantón Quitasol</div>
+                        <p>Un lugar especial lleno de amor y recuerdos familiares, perfecto para dar la bienvenida a
+                            nuestra pequeña Aileen.</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d342.0563951441907!2d-89.14090279778992!3d14.081525197544087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f631379200b2991%3A0x10b3afb0bd23d31f!2sEl%20sombreron%20Guanaco!5e0!3m2!1ses!2ssv!4v1751928517594!5m2!1ses!2ssv"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario RSVP Actualizado con Campo de Identificación -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Confirmación de Asistencia</h2>
+            <div class="rsvp-container">
+                <div class="rsvp-inner">
+                    <!-- Cambiamos el div a form y agregamos id -->
+                    <form id="invitacionForm">
+                        <div class="input-group">
+                            <label class="input-label">
+                                Nombre o Grupo Familiar <span class="required-star">*</span>
+                            </label>
+                            <!-- Agregamos name="nombre" -->
+                            <input type="text" name="nombre" id="guest-name" class="name-input"
+                                placeholder="Ej: Familia Funes, María Rodríguez" required>
+                            <span class="input-hint">Por favor ingrese quién confirmará asistencia</span>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="detail-content">¿Asistirás al baby shower?</span>
+                            <div class="radio-group">
+                                <div class="radio-option" onclick="selectOption('yes');">
+                                    <input type="radio" id="attending-yes" name="asistencia" value="Sí">
+                                    <label for="attending-yes">Sí, estaré presente</label>
+                                </div>
+                                <div class="radio-option" onclick="selectOption('no');">
+                                    <input type="radio" id="attending-no" name="asistencia" value="No">
+                                    <label for="attending-no">Lamentablemente no puedo asistir</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="detail-content">Mensaje (opcional)</label>
+                            <!-- Agregamos name="mensaje" -->
+                            <textarea name="mensaje" id="message"
+                                placeholder="Envía un mensaje a los futuros padres..."></textarea>
+                        </div>
+
+                        <!-- Cambiamos a type="submit" -->
+                        <button type="submit" id="submit-btn" class="submit-btn" disabled>Confirmar Asistencia</button>
+                    </form>
+
+                    <!-- Este es el mensaje de agradecimiento que ya tienes -->
+                    <div id="thank-you" style="display: none;">
+                        <div style="text-align: center; padding: 2rem;">
+                            <div
+                                style="display: inline-block; padding: 1.5rem; background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-radius: 50%; margin-bottom: 1.5rem;">
+                                <i class="fas fa-check" style="font-size: 2.5rem; color: #10b981;"></i>
+                            </div>
+                            <h3 style="font-size: 1.8rem; color: var(--pink-800); margin-bottom: 1rem;">¡Gracias por tu
+                                confirmación!</h3>
+                            <p style="color: var(--pink-700); margin-bottom: 1.5rem;">Estamos emocionados de celebrar
+                                contigo.</p>
+                            <button onclick="resetForm()"
+                                style="background: linear-gradient(135deg, var(--pink-500), var(--purple-500)); color: white; border: none; padding: 0.8rem 1.8rem; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                                Modificar Respuesta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de regalos simplificada -->
+    <section class="gift-section">
+        <div class="container">
+            <h2 class="section-title">Regalos</h2>
+            <div class="gift-card">
+                <div class="gift-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <p class="gift-text">
+                    Tu presencia es el mejor regalo que podemos recibir en este día tan especial.
+                </p>
+                <p class="gift-note">
+                    Si deseas traer un detalle para nuestra pequeña Aileen,
+                    cualquier regalo será recibido con mucho amor y agradecimiento.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de fotos -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Nuestros Momentos</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="./img/Ecografía.webp" alt="Su primera Ecografía">
+                    <div class="gallery-caption">Su primer ecografía de Aileen</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/DetalleBonito.webp" alt="Detalle bonito">
+                    <div class="gallery-caption">Su Primer Regalo.</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/Familia.webp" alt="Su última ecografía en 4D">
+                    <div class="gallery-caption">Su última ecografía en 4D</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de agradecimiento -->
+    <section class="thanks-section">
+        <div class="container">
+            <div class="thanks-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h2 class="thanks-title">¡Gracias por ser parte de nuestra alegría!</h2>
+            <p class="thanks-text">
+                Estamos emocionados de compartir este momento tan especial con todos ustedes.
+                Su amor y apoyo significan el mundo para nosotros y para nuestra pequeña Aileen.
+            </p>
+
+            <div class="contact-icons">
+                <a href="https://wa.me/70432563" class="contact-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:helen.castillo@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+123456789" class="contact-link">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2025 Baby Shower de Aileen Galdamez Castillo</p>
+            <p class="footer-text">Diseñado con ❤️ por los futuros papás</p>
+        </div>
+    </footer>
+
+    <!-- Elemento de audio para la canción -->
+    <audio id="audioPlayer">
+        <source src="./audio/OjosColorMiel.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script src="/aileendaniela/js/form-handler.js"></script>
+
+    <script>
+        // Contador regresivo actualizado con nueva fecha y hora
+        function updateCountdown() {
+            const eventDate = new Date('2025-08-16T12:00:00'); // Nueva fecha y hora
+            const now = new Date();
+            const diff = eventDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Actualizar contador cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Ejecutar inmediatamente
+
+        // Manejo del formulario RSVP actualizado
+        function validateForm() {
+            const name = document.getElementById('guest-name').value.trim();
+            const optionSelected = document.querySelector('input[name="attending"]:checked') !== null;
+
+            document.getElementById('submit-btn').disabled = !(name && optionSelected);
+        }
+
+        function selectOption(value) {
+            // Actualizar selección visual
+            document.querySelectorAll('.radio-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+
+            const selectedOption = value === 'yes'
+                ? document.querySelector('#attending-yes').parentElement
+                : document.querySelector('#attending-no').parentElement;
+
+            selectedOption.classList.add('selected');
+
+            // Marcar radio button
+            document.querySelector(`#attending-${value}`).checked = true;
+
+            // Validar formulario completo
+            validateForm();
+        }
+
+        // Validar cuando se escribe en el campo de nombre
+        document.getElementById('guest-name').addEventListener('input', validateForm);
+
+        document.getElementById('submit-btn').addEventListener('click', function () {
+            // Validar que haya una opción seleccionada
+            const attendingRadio = document.querySelector('input[name="asistencia"]:checked');
+            if (!attendingRadio) {
+                alert('Por favor, selecciona si asistirás al evento.');
+                return;
+            }
+
+            // Obtener valores del formulario
+            const name = document.getElementById('guest-name').value.trim();
+            const attending = attendingRadio.value;
+            const message = document.getElementById('message').value;
+
+            // Simular envío (en producción se enviará a GAS)
+            console.log('Confirmación recibida:', {
+                invitado: name,
+                asistencia: attending,
+                mensaje: message
+            });
+
+            // Mostrar mensaje de agradecimiento
+            document.getElementById('invitacionForm').style.display = 'none';
+            document.getElementById('thank-you').style.display = 'block';
+        });
+
+        function resetForm() {
+            // Restablecer formulario
+            document.querySelectorAll('.radio-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+
+            document.querySelectorAll('input[name="attending"]').forEach(radio => {
+                radio.checked = false;
+            });
+
+            document.getElementById('guest-name').value = '';
+            document.getElementById('message').value = '';
+            document.getElementById('submit-btn').disabled = true;
+
+            // Mostrar formulario de nuevo
+            document.getElementById('rsvp-form').style.display = 'block';
+            document.getElementById('thank-you').style.display = 'none';
+        }
+
+        // Reproductor de música con texto "Reproducir"
+        const musicPlayer = document.getElementById('musicPlayer');
+        const playBtn = document.getElementById('playBtn');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const progressBar = document.getElementById('progressBar');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const changeSongBtn = document.getElementById('changeSongBtn');
+        const songTitle = document.getElementById('songTitle');
+        const artist = document.getElementById('artist');
+        const playText = document.getElementById('playText');
+
+        // Estado del reproductor
+        let isPlaying = false;
+        let isExpanded = false;
+
+        // Cambiar entre play y pause
+        function togglePlay() {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                playText.textContent = 'Reproducir';
+            } else {
+                audioPlayer.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                playText.textContent = 'Pausar';
+                // Expandir el reproductor al iniciar
+                if (!isExpanded) {
+                    togglePlayerSize();
+                }
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Cambiar tamaño del reproductor
+        function togglePlayerSize() {
+            musicPlayer.classList.toggle('player-expanded');
+            isExpanded = !isExpanded;
+        }
+
+        // Actualizar barra de progreso
+        function updateProgress() {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Cambiar volumen
+        function setVolume() {
+            audioPlayer.volume = volumeSlider.value;
+        }
+
+        // Permitir cambiar de canción fácilmente
+        function changeSong() {
+            // Aquí se cambiaría el archivo de audio
+            const newSong = prompt("Ingrese el nuevo nombre del archivo de audio (ej: nueva_cancion.mp3):");
+            if (newSong) {
+                audioPlayer.src = newSong;
+                // Actualizar la información de la canción
+                songTitle.textContent = "Nueva canción";
+                artist.textContent = "Nuevo artista";
+                // Reiniciar el reproductor
+                isPlaying = false;
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                playText.textContent = 'Reproducir';
+                progressBar.style.width = '0%';
+            }
+        }
+
+        // Event listeners
+        playBtn.addEventListener('click', togglePlay);
+        musicPlayer.addEventListener('click', function (e) {
+            // Expandir al hacer clic en cualquier parte del reproductor
+            if (!isExpanded && e.target !== playBtn && e.target !== playText) {
+                togglePlayerSize();
+            }
+        });
+        audioPlayer.addEventListener('timeupdate', updateProgress);
+        volumeSlider.addEventListener('input', setVolume);
+        changeSongBtn.addEventListener('click', changeSong);
+
+        // Configuración inicial del volumen
+        audioPlayer.volume = volumeSlider.value;
+
+        // Inicializar
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+            validateForm();
+        });
+
+        window.addEventListener('message', function (event) {
+            if (event.data === 'form-submitted') {
+                document.getElementById('rsvp-form').style.display = 'none';
+                document.getElementById('thank-you').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

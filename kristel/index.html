@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Librería js-confetti -->
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-    <link rel="stylesheet" href="/kristel/css/styles.css">
+     <link rel="stylesheet" href="/kristel/css/styles.css">
 </head>
 
 <body>
@@ -110,6 +110,12 @@
                 </a>
             </div>
         </div>
+        
+        <!-- Footer con créditos -->
+        <div class="credits">
+            Invitación creada por <a href="https://momentoswow.com" target="_blank">momentoswow.com</a> - 
+            Un proyecto de <a href="#" target="_blank">Yerba Digital</a>
+        </div>
     </div>
 
     <!-- Botón flotante para confeti -->
@@ -119,7 +125,7 @@
 
     <!-- Elemento de audio -->
     <audio id="birthdayAudio">
-        <source src="audio/audio-cumple.mp3" type="audio/mpeg">
+        <source src="/kristel/audio/audio-cumple.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
@@ -183,7 +189,7 @@
                 playIcon.textContent = 'pause';
                 audioStatus.textContent = 'Reproduciendo...';
                 isPlaying = true;
-
+                
                 // También lanzar confeti cuando se inicia la música
                 jsConfetti.addConfetti({
                     confettiColors: ['#ff5a87', '#9165ed'],

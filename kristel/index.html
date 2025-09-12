@@ -9,30 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Birthstone&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <link rel="stylesheet" href="/kristel/css/styles.css">
-    <style>
-
-    </style>
+    <!-- Librería js-confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <link rel="stylesheet" href="/kristel/css/styles.css">
 </head>
 
 <body>
     <div class="container">
-        <!-- Elementos decorativos -->
-        <div class="balloon">🎈</div>
-        <div class="balloon">🎈</div>
-        <div class="balloon">🎈</div>
-        <div class="balloon">🎈</div>
-        <div class="confetti">🎊</div>
-        <div class="confetti">🎉</div>
-        <div class="confetti">✨</div>
-        <div class="confetti">🎀</div>
-
         <!-- Tarjeta de invitación -->
         <div class="invitation-card">
             <!-- Nueva imagen de fondo "Happy Birthday!" -->
             <div class="happy-birthday-bg"></div>
 
-            <!-- Imagen de Paw Patrol sobrepuesta - TAMAÑO AUMENTADO -->
+            <!-- Imagen de Paw Patrol sobrepuesta -->
             <div class="paw-patrol-image">
                 <img src="/kristel/img/portada.webp" alt="Paw Patrol"
                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22320%22 height%3D%22240%22 viewBox%3D%220 0 100 100%22%3E%3Ctext y%3D%2250%25%22 x%3D%2250%25%22 dominant-baseline%3D%22middle%22 text-anchor%3D%22middle%22 font-size%3D%2220%22 fill%3D%22%23ff5a87%22%3EPaw Patrol%3C%2Ftext%3E%3C%2Fsvg%3E'">
@@ -80,6 +69,19 @@
 
                 <p>La patrulla ya está lista… ¡solo faltas tú para la aventura!</p>
 
+                <!-- Reproductor de audio -->
+                <div class="audio-player">
+                    <div class="audio-player-container">
+                        <button class="audio-btn" id="playBtn">
+                            <span class="material-icons" id="playIcon">play_arrow</span>
+                        </button>
+                        <div class="audio-info">
+                            <p class="audio-title">Canción de Cumpleaños</p>
+                            <p class="audio-status" id="audioStatus">Presiona play</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="details">
                     <div>
                         <span class="material-icons detail-icon">calendar_today</span>
@@ -110,6 +112,17 @@
         </div>
     </div>
 
+    <!-- Botón flotante para confeti -->
+    <button class="confetti-btn" id="confettiBtn">
+        <span class="material-icons">celebration</span>
+    </button>
+
+    <!-- Elemento de audio -->
+    <audio id="birthdayAudio">
+        <source src="audio/audio-cumple.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
     <script>
         // Countdown para la fecha del evento (29 de septiembre)
         function updateCountdown() {
@@ -139,67 +152,58 @@
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Llamar inicialmente
 
-        // Elementos decorativos dinámicos
-        document.addEventListener('DOMContentLoaded', function () {
-            const body = document.body;
-            const balloonEmojis = ['🎈', '🎈', '🎈', '🎈'];
-            const confettiEmojis = ['🎊', '🎉', '✨', '🎀'];
+        // Configuración de js-confetti
+        const jsConfetti = new JSConfetti();
+        const confettiBtn = document.getElementById('confettiBtn');
 
-            // Función para verificar si un elemento se superpone con la tarjeta
-            function isOverlappingCard(x, y) {
-                const card = document.querySelector('.container');
-                const cardRect = card.getBoundingClientRect();
+        confettiBtn.addEventListener('click', () => {
+            jsConfetti.addConfetti({
+                confettiColors: ['#ff5a87', '#9165ed', '#ffcf5c', '#5cd3ff', '#ff8e5c', '#7beb8c'],
+                confettiRadius: 5,
+                confettiNumber: 300,
+            });
+        });
 
-                // Añadir un margen de seguridad alrededor de la tarjeta
-                const margin = 50;
-                const safeArea = {
-                    left: cardRect.left - margin,
-                    right: cardRect.right + margin,
-                    top: cardRect.top - margin,
-                    bottom: cardRect.bottom + margin
-                };
+        // Controlador del reproductor de audio
+        const audio = document.getElementById('birthdayAudio');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const audioStatus = document.getElementById('audioStatus');
 
-                return x >= safeArea.left && x <= safeArea.right &&
-                    y >= safeArea.top && y <= safeArea.bottom;
-            }
+        let isPlaying = false;
 
-            for (let i = 0; i < 6; i++) {
-                const balloon = document.createElement('div');
-                balloon.classList.add('balloon');
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                playIcon.textContent = 'play_arrow';
+                audioStatus.textContent = 'Pausado';
+                isPlaying = false;
+            } else {
+                audio.play();
+                playIcon.textContent = 'pause';
+                audioStatus.textContent = 'Reproduciendo...';
+                isPlaying = true;
 
-                // Generar posiciones aleatorias que no se superpongan con la tarjeta
-                let x, y;
-                let attempts = 0;
-                do {
-                    x = Math.random() * (window.innerWidth - 60);
-                    y = Math.random() * (window.innerHeight - 70);
-                    attempts++;
-                } while (isOverlappingCard(x, y) && attempts < 20); // Límite de intentos para evitar bucle infinito
-
-                balloon.style.left = x + 'px';
-                balloon.style.top = y + 'px';
-                balloon.style.animationDelay = Math.random() * 5 + 's';
-                balloon.style.backgroundColor = getRandomColor();
-                balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
-                body.appendChild(balloon);
-            }
-
-            for (let i = 0; i < 10; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-
-                // Posicionar confetti solo en la parte superior (no interferirá con la tarjeta)
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.animationDelay = Math.random() * 5 + 's';
-                confetti.textContent = confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
-                body.appendChild(confetti);
+                // También lanzar confeti cuando se inicia la música
+                jsConfetti.addConfetti({
+                    confettiColors: ['#ff5a87', '#9165ed'],
+                    confettiRadius: 4,
+                    confettiNumber: 100,
+                });
             }
         });
 
-        function getRandomColor() {
-            const colors = ['#ff5a87', '#9165ed', '#ffcf5c', '#5cd3ff', '#ff8e5c', '#7beb8c'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
+        // Actualizar estado cuando la música termina
+        audio.addEventListener('ended', () => {
+            playIcon.textContent = 'play_arrow';
+            audioStatus.textContent = 'Presiona play';
+            isPlaying = false;
+        });
+
+        // Actualizar estado si hay error de carga
+        audio.addEventListener('error', () => {
+            audioStatus.textContent = 'Error al cargar audio';
+        });
     </script>
 </body>
 

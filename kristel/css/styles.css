@@ -33,21 +33,17 @@
           position: relative;
           z-index: 20;
           padding-top: 180px;
-          /* Aumentado para acomodar imagen más grande */
           margin-top: 120px;
-          /* Aumentado para acomodar imagen más grande */
           transform-style: preserve-3d;
         }
 
-        /* Imagen de Paw Patrol flotante - TAMAÑO AUMENTADO */
+        /* Imagen de Paw Patrol flotante */
         .paw-patrol-image {
           position: absolute;
           top: -100px;
-          /* Ajustado para imagen más grande */
           left: 50%;
           transform: translateX(-50%) rotate(2deg) scale(1.05);
           width: 320px;
-          /* Aumentado de 220px a 320px */
           height: auto;
           z-index: 35;
           filter: brightness(1.1);
@@ -66,7 +62,7 @@
           outline: none !important;
         }
 
-        /* Nueva imagen de fondo "Happy Birthday!" - OPACIDAD REDUCIDA */
+        /* Nueva imagen de fondo "Happy Birthday!" */
         .happy-birthday-bg {
           position: absolute;
           top: 50%;
@@ -79,7 +75,6 @@
           background-position: center;
           background-size: contain;
           opacity: 0.2;
-          /* Reducido de 0.4 a 0.2 */
           z-index: 5;
           pointer-events: none;
         }
@@ -87,10 +82,8 @@
         .card-content {
           padding: 35px;
           padding-top: 200px;
-          /* Reducido porque la imagen ya no está encima del contenido */
           position: relative;
           z-index: 30;
-          /* Aumentado de 25 a 30 */
           transform: translateZ(0);
         }
 
@@ -103,18 +96,15 @@
           text-shadow: 2px 2px 0px rgba(255, 198, 213, 0.8);
           position: relative;
           z-index: 30;
-          /* Aumentado para estar sobre la imagen de fondo */
         }
 
         .name-highlight {
           font-family: 'Birthstone', cursive;
-          /* Nueva fuente Birthstone */
           color: #ff5a87;
           font-weight: normal;
           display: block;
           padding: 0 8px;
           font-size: 8.5rem;
-          /* Tamaño aumentado significativamente */
           margin: 0;
           background: linear-gradient(45deg, #ff5a87, #ff347c, #ff7ea7);
           -webkit-background-clip: text;
@@ -122,7 +112,6 @@
           background-clip: text;
           position: relative;
           z-index: 35;
-          /* Aumentado de 10 a 35 */
           line-height: 1;
           margin: -25px 0;
           text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
@@ -138,7 +127,6 @@
           margin-top: 5px;
           position: relative;
           z-index: 30;
-          /* Aumentado para estar sobre la imagen de fondo */
         }
 
         @keyframes name-pulse {
@@ -162,12 +150,10 @@
           font-size: 1.4rem;
           margin-bottom: 25px;
           color: #4a4a4a;
-          /* Color más oscuro para mejor contraste */
           line-height: 1.5;
           font-weight: 600;
           position: relative;
           z-index: 30;
-          /* Aumentado para estar sobre la imagen de fondo */
         }
 
         .paw-patrol-container {
@@ -349,97 +335,6 @@
           filter: blur(10px);
         }
 
-        .balloon {
-          position: absolute;
-          width: 50px;
-          height: 60px;
-          border-radius: 50%;
-          animation: float 8s ease-in-out infinite;
-          z-index: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          font-size: 26px;
-          filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.3));
-          transform-style: preserve-3d;
-        }
-
-        .balloon::before {
-          content: "";
-          position: absolute;
-          bottom: -8px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 2px;
-          height: 15px;
-          background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        .confetti {
-          position: absolute;
-          width: 15px;
-          height: 15px;
-          opacity: 0.7;
-          animation: fall 5s linear infinite;
-          z-index: 1;
-          font-size: 20px;
-          transform-style: preserve-3d;
-        }
-
-        /* Nuevos estilos para los globos - Evitar que cubran información importante */
-        .balloon:nth-child(1) {
-          background-color: #ff5a87;
-          top: 8%;
-          left: 5%;
-          animation-delay: 0s;
-        }
-
-        .balloon:nth-child(2) {
-          background-color: #9165ed;
-          top: 12%;
-          right: 5%;
-          animation-delay: 1s;
-        }
-
-        .balloon:nth-child(3) {
-          background-color: #ffcf5c;
-          bottom: 5%;
-          left: 10%;
-          animation-delay: 2s;
-        }
-
-        .balloon:nth-child(4) {
-          background-color: #5cd3ff;
-          bottom: 8%;
-          right: 10%;
-          animation-delay: 3s;
-        }
-
-        .confetti:nth-child(5) {
-          top: -5%;
-          left: 20%;
-          animation-delay: 0.5s;
-        }
-
-        .confetti:nth-child(6) {
-          top: -5%;
-          right: 25%;
-          animation-delay: 1.5s;
-        }
-
-        .confetti:nth-child(7) {
-          top: -5%;
-          left: 40%;
-          animation-delay: 2.5s;
-        }
-
-        .confetti:nth-child(8) {
-          top: -5%;
-          right: 40%;
-          animation-delay: 3.5s;
-        }
-
         .countdown {
           display: flex;
           justify-content: center;
@@ -479,18 +374,6 @@
           }
         }
 
-        @keyframes float {
-
-          0%,
-          100% {
-            transform: translateY(0) rotate(0deg) translateZ(0);
-          }
-
-          50% {
-            transform: translateY(-20px) rotate(5deg) translateZ(20px);
-          }
-        }
-
         @keyframes bounce {
 
           0%,
@@ -500,18 +383,6 @@
 
           50% {
             transform: translateY(-15px) translateZ(10px);
-          }
-        }
-
-        @keyframes fall {
-          0% {
-            transform: translateY(0) rotate(0deg) translateZ(0);
-            opacity: 1;
-          }
-
-          100% {
-            transform: translateY(100vh) rotate(360deg) translateZ(50px);
-            opacity: 0;
           }
         }
 
@@ -529,45 +400,315 @@
           }
         }
 
-        @media (max-width: 850px) {
+        /* Botón de confeti flotante */
+        .confetti-btn {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #ff5a87;
+          color: white;
+          border: none;
+          box-shadow: 0 4px 15px rgba(255, 90, 135, 0.5);
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          transition: all 0.3s ease;
+          animation: pulse 2s infinite;
+        }
+
+        .confetti-btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 6px 20px rgba(255, 90, 135, 0.7);
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+          }
+
+          50% {
+            transform: scale(1.05);
+          }
+
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        /* Reproductor de audio */
+        .audio-player {
+          margin: 25px 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .audio-player-container {
+          background-color: #f0e6ff;
+          border-radius: 50px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          box-shadow: 0 5px 15px rgba(145, 101, 237, 0.2);
+          border: 2px dashed #9165ed;
+          max-width: 350px;
+        }
+
+        .audio-btn {
+          background-color: #ff5a87;
+          color: white;
+          border: none;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: all 0.3s;
+          box-shadow: 0 4px 10px rgba(255, 90, 135, 0.4);
+        }
+
+        .audio-btn:hover {
+          transform: scale(1.05);
+          background-color: #ff347c;
+        }
+
+        .audio-info {
+          flex: 1;
+          text-align: left;
+        }
+
+        .audio-title {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: #5e5e5e;
+          margin: 0;
+        }
+
+        .audio-status {
+          font-size: 0.9rem;
+          color: #9165ed;
+          margin: 0;
+        }
+
+        /* Media queries para responsive */
+        @media (max-width: 900px) {
           .container {
             max-width: 95%;
-            padding: 10px;
+            padding: 15px;
           }
 
           h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
+            font-size: 2.2rem;
           }
 
           .name-highlight {
-            font-size: 4rem;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
+            font-size: 6rem;
           }
 
           h2 {
-            font-size: 1.8rem;
-            margin-top: 10px;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+          }
+
+          .paw-patrol-image {
+            width: 280px;
+            top: -90px;
+          }
+
+          .invitation-card {
+            padding-top: 160px;
+            margin-top: 100px;
+          }
+
+          .card-content {
+            padding: 25px 20px;
+            padding-top: 180px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2rem;
+          }
+
+          .name-highlight {
+            font-size: 5rem;
+            margin: -15px 0;
+          }
+
+          h2 {
+            font-size: 2rem;
           }
 
           p,
           .details div {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-          }
-
-          .balloon {
-            width: 35px;
-            height: 45px;
-            font-size: 18px;
+            font-size: 1.2rem;
           }
 
           .paw-patrol-image {
-            width: 220px;
+            width: 240px;
+            top: -80px;
+          }
+
+          .invitation-card {
+            padding-top: 140px;
+            margin-top: 90px;
+          }
+
+          .card-content {
+            padding: 20px 15px;
+            padding-top: 160px;
+          }
+
+          .paw-patrol-character {
+            width: 70px;
+            height: 70px;
+          }
+
+          .character-icon {
+            font-size: 35px;
+          }
+
+          .btn-confirm,
+          .btn-decline {
+            padding: 14px 30px;
+            font-size: 1.2rem;
+          }
+
+          .details {
+            padding: 20px 15px;
+          }
+
+          .details div {
+            font-size: 1.1rem;
+            padding: 0 15px;
+          }
+
+          .confetti-btn {
+            bottom: 15px;
+            right: 15px;
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          h1 {
+            font-size: 1.8rem;
+          }
+
+          .name-highlight {
+            font-size: 4rem;
+            margin: -10px 0;
+          }
+
+          h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+          }
+
+          p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+          }
+
+          .paw-patrol-image {
+            width: 200px;
             top: -70px;
+          }
+
+          .invitation-card {
+            padding-top: 120px;
+            margin-top: 80px;
+          }
+
+          .card-content {
+            padding: 15px 10px;
+            padding-top: 140px;
+          }
+
+          .countdown {
+            gap: 10px;
+            margin: 15px 0;
+          }
+
+          .countdown-item {
+            min-width: 60px;
+            padding: 8px;
+          }
+
+          .countdown-number {
+            font-size: 1.5rem;
+          }
+
+          .countdown-label {
+            font-size: 0.8rem;
+          }
+
+          .details div {
+            font-size: 1rem;
+            margin: 12px 0;
+            padding: 0 10px;
+          }
+
+          .detail-icon {
+            font-size: 24px;
+            min-width: 30px;
+          }
+
+          .audio-player-container {
+            padding: 8px 15px;
+            max-width: 300px;
+          }
+
+          .audio-btn {
+            width: 45px;
+            height: 45px;
+          }
+
+          .audio-title {
+            font-size: 1rem;
+          }
+
+          .audio-status {
+            font-size: 0.8rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          h1 {
+            font-size: 1.6rem;
+          }
+
+          .name-highlight {
+            font-size: 3.5rem;
+          }
+
+          h2 {
+            font-size: 1.6rem;
+          }
+
+          .paw-patrol-image {
+            width: 180px;
+            top: -60px;
+          }
+
+          .invitation-card {
+            padding-top: 110px;
+            margin-top: 70px;
+          }
+
+          .card-content {
+            padding: 15px 8px;
+            padding-top: 130px;
           }
 
           .paw-patrol-character {
@@ -579,16 +720,6 @@
             font-size: 30px;
           }
 
-          .invitation-card {
-            padding-top: 120px;
-            margin-top: 80px;
-          }
-
-          .card-content {
-            padding: 20px 15px;
-            padding-top: 30px;
-          }
-
           .btn-confirm,
           .btn-decline {
             padding: 12px 25px;
@@ -597,89 +728,95 @@
             max-width: 280px;
           }
 
-          .countdown {
-            gap: 8px;
-            margin: 15px 0;
-          }
-
           .countdown-item {
             min-width: 50px;
-            padding: 8px 5px;
+            padding: 6px;
           }
 
           .countdown-number {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
           }
 
           .countdown-label {
             font-size: 0.7rem;
           }
 
-          .details {
-            padding: 15px 10px;
-            margin: 20px 0;
+          .confetti-btn {
+            bottom: 10px;
+            right: 10px;
+            width: 45px;
+            height: 45px;
           }
 
-          .details div {
-            padding: 0 5px;
-            margin: 12px 0;
-            font-size: 1rem;
-          }
-
-          .detail-icon {
+          .confetti-btn .material-icons {
             font-size: 24px;
-            min-width: 30px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .name-highlight {
+            font-size: 3rem;
           }
 
-          /* Ajustes para la imagen de fondo en móviles */
-          .happy-birthday-bg {
-            opacity: 0.15;
+          .paw-patrol-image {
+            width: 160px;
+            top: -55px;
           }
 
-          /* Ajustes para globos en móviles - posiciones más seguras */
-          .balloon:nth-child(1) {
-            left: 2%;
-            top: 3%;
+          .invitation-card {
+            padding-top: 100px;
+            margin-top: 60px;
           }
 
-          .balloon:nth-child(2) {
-            right: 2%;
-            top: 5%;
+          .card-content {
+            padding-top: 120px;
           }
 
-          .balloon:nth-child(3) {
-            left: 3%;
-            bottom: 2%;
+          .countdown {
+            gap: 5px;
           }
 
-          .balloon:nth-child(4) {
-            right: 3%;
-            bottom: 3%;
+          .countdown-item {
+            min-width: 45px;
+            padding: 5px;
           }
 
-          /* Ajustes adicionales para pantallas muy pequeñas */
-          @media (max-width: 380px) {
-            .name-highlight {
-              font-size: 3.2rem;
-            }
+          .countdown-number {
+            font-size: 1.2rem;
+          }
 
-            h1,
-            h2 {
-              font-size: 1.5rem;
-            }
+          .countdown-label {
+            font-size: 0.65rem;
+          }
 
-            .paw-patrol-image {
-              width: 180px;
-              top: -60px;
-            }
+          .paw-patrol-container {
+            gap: 10px;
+          }
 
-            .countdown-item {
-              min-width: 40px;
-              padding: 5px 3px;
-            }
+          .paw-patrol-character {
+            width: 55px;
+            height: 55px;
+          }
 
-            .countdown-number {
-              font-size: 1.2rem;
-            }
+          .character-icon {
+            font-size: 25px;
+          }
+
+          .audio-player-container {
+            max-width: 260px;
+            padding: 6px 12px;
+          }
+
+          .audio-btn {
+            width: 40px;
+            height: 40px;
+          }
+
+          .audio-title {
+            font-size: 0.9rem;
+          }
+
+          .audio-status {
+            font-size: 0.75rem;
           }
         }

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristel cumple 3 años</title>
+    <!-- Fuentes: Nunito y Birthstone -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Birthstone&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="/kristel/css/styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Elementos decorativos -->
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="balloon">🎈</div>
+        <div class="confetti">🎊</div>
+        <div class="confetti">🎉</div>
+        <div class="confetti">✨</div>
+        <div class="confetti">🎀</div>
+
+        <!-- Tarjeta de invitación -->
+        <div class="invitation-card">
+            <!-- Nueva imagen de fondo "Happy Birthday!" -->
+            <div class="happy-birthday-bg"></div>
+
+            <!-- Imagen de Paw Patrol sobrepuesta - TAMAÑO AUMENTADO -->
+            <div class="paw-patrol-image">
+                <img src="/kristel/img/portada.webp" alt="Paw Patrol"
+                    onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22320%22 height%3D%22240%22 viewBox%3D%220 0 100 100%22%3E%3Ctext y%3D%2250%25%22 x%3D%2250%25%22 dominant-baseline%3D%22middle%22 text-anchor%3D%22middle%22 font-size%3D%2220%22 fill%3D%22%23ff5a87%22%3EPaw Patrol%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            </div>
+
+            <div class="card-content">
+                <h1>¡Te invito a mi fiesta!</h1>
+                <span class="name-highlight">Kristel</span>
+                <h2>cumple 3 años</h2>
+
+                <!-- Countdown -->
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Días</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Horas</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Min</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seg</div>
+                    </div>
+                </div>
+
+                <div class="paw-patrol-container">
+                    <div class="paw-patrol-character">
+                        <span class="material-icons character-icon">pets</span>
+                    </div>
+                    <div class="paw-patrol-character">
+                        <span class="material-icons character-icon">emergency</span>
+                    </div>
+                    <div class="paw-patrol-character">
+                        <span class="material-icons character-icon">fire_truck</span>
+                    </div>
+                    <div class="paw-patrol-character">
+                        <span class="material-icons character-icon">flight</span>
+                    </div>
+                </div>
+
+                <p>La patrulla ya está lista… ¡solo faltas tú para la aventura!</p>
+
+                <div class="details">
+                    <div>
+                        <span class="material-icons detail-icon">calendar_today</span>
+                        <strong>lunes 29 Sep</strong>
+                    </div>
+                    <div>
+                        <span class="material-icons detail-icon schedule">schedule</span>
+                        <strong>3:00PM</strong>
+                    </div>
+                    <div>
+                        <span class="material-icons detail-icon">house</span>
+                        <strong>En casa de Mamá Jiña</strong>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/50370895547?text=¡Hola! Confirmo mi asistencia a la fiesta de Kristel. 🎉"
+                    class="btn-confirm" target="_blank">
+                    <span class="material-icons">celebration</span>
+                    Confirmar Asistencia
+                </a>
+
+                <a href="https://wa.me/50370895547?text=Lamento informar que no podré asistir a la fiesta de Kristel. 😢"
+                    class="btn-decline" target="_blank">
+                    <span class="material-icons">sentiment_dissatisfied</span>
+                    No podré asistir
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown para la fecha del evento (29 de septiembre)
+        function updateCountdown() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            let eventDate = new Date(currentYear, 8, 29, 15, 0, 0); // 29 de Septiembre a las 3:00PM
+
+            // Si ya pasó la fecha este año, calcular para el próximo año
+            if (now > eventDate) {
+                eventDate = new Date(currentYear + 1, 8, 29, 15, 0, 0);
+            }
+
+            const timeRemaining = eventDate - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Actualizar el countdown cada segundo
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Llamar inicialmente
+
+        // Elementos decorativos dinámicos
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+            const balloonEmojis = ['🎈', '🎈', '🎈', '🎈'];
+            const confettiEmojis = ['🎊', '🎉', '✨', '🎀'];
+
+            // Función para verificar si un elemento se superpone con la tarjeta
+            function isOverlappingCard(x, y) {
+                const card = document.querySelector('.container');
+                const cardRect = card.getBoundingClientRect();
+
+                // Añadir un margen de seguridad alrededor de la tarjeta
+                const margin = 50;
+                const safeArea = {
+                    left: cardRect.left - margin,
+                    right: cardRect.right + margin,
+                    top: cardRect.top - margin,
+                    bottom: cardRect.bottom + margin
+                };
+
+                return x >= safeArea.left && x <= safeArea.right &&
+                    y >= safeArea.top && y <= safeArea.bottom;
+            }
+
+            for (let i = 0; i < 6; i++) {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+
+                // Generar posiciones aleatorias que no se superpongan con la tarjeta
+                let x, y;
+                let attempts = 0;
+                do {
+                    x = Math.random() * (window.innerWidth - 60);
+                    y = Math.random() * (window.innerHeight - 70);
+                    attempts++;
+                } while (isOverlappingCard(x, y) && attempts < 20); // Límite de intentos para evitar bucle infinito
+
+                balloon.style.left = x + 'px';
+                balloon.style.top = y + 'px';
+                balloon.style.animationDelay = Math.random() * 5 + 's';
+                balloon.style.backgroundColor = getRandomColor();
+                balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+                body.appendChild(balloon);
+            }
+
+            for (let i = 0; i < 10; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+
+                // Posicionar confetti solo en la parte superior (no interferirá con la tarjeta)
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.textContent = confettiEmojis[Math.floor(Math.random() * confettiEmojis.length)];
+                body.appendChild(confetti);
+            }
+        });
+
+        function getRandomColor() {
+            const colors = ['#ff5a87', '#9165ed', '#ffcf5c', '#5cd3ff', '#ff8e5c', '#7beb8c'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+
+</html>

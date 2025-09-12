@@ -5,6 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kristel cumple 3 años</title>
+
+    <!-- Meta tags para redes sociales -->
+    <meta property="og:title" content="¡Kristel cumple 3 años!">
+    <meta property="og:description"
+        content="Únete a la celebración de cumpleaños de Kristel con temática de Paw Patrol">
+    <meta property="og:image" content="https://momentoswow.com/img/portada.webp">
+    <meta property="og:url" content="https://momentoswow.com/invitacion">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¡Kristel cumple 3 años!">
+    <meta name="twitter:description"
+        content="Únete a la celebración de cumpleaños de Kristel con temática de Paw Patrol">
+    <meta name="twitter:image" content="https://momentoswow.comimg/portada.webp">
+
     <!-- Fuentes: Nunito y Birthstone -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Birthstone&display=swap"
         rel="stylesheet">
@@ -12,6 +27,7 @@
     <!-- Librería js-confetti -->
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
      <link rel="stylesheet" href="/kristel/css/styles.css">
+ 
 </head>
 
 <body>
@@ -110,12 +126,6 @@
                 </a>
             </div>
         </div>
-        
-        <!-- Footer con créditos -->
-        <div class="credits">
-            Invitación creada por <a href="https://momentoswow.com" target="_blank">momentoswow.com</a> - 
-            Un proyecto de <a href="#" target="_blank">Yerba Digital</a>
-        </div>
     </div>
 
     <!-- Botón flotante para confeti -->
@@ -189,7 +199,7 @@
                 playIcon.textContent = 'pause';
                 audioStatus.textContent = 'Reproduciendo...';
                 isPlaying = true;
-                
+
                 // También lanzar confeti cuando se inicia la música
                 jsConfetti.addConfetti({
                     confettiColors: ['#ff5a87', '#9165ed'],

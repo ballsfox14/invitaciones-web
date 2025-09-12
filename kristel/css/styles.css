@@ -1,873 +1,822 @@
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        body {
-          font-family: 'Nunito', sans-serif;
-          background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #a18cd1 100%);
-          min-height: 100vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          overflow-x: hidden;
-          padding: 20px;
-          perspective: 1000px;
-          position: relative;
-        }
-
-        .container {
-          max-width: 800px;
-          width: 100%;
-          position: relative;
-          transform-style: preserve-3d;
-          z-index: 10;
-        }
-
-        .invitation-card {
-          background-color: rgba(255, 255, 255, 0.95);
-          border-radius: 20px;
-          overflow: visible;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-          text-align: center;
-          position: relative;
-          z-index: 20;
-          padding-top: 180px;
-          margin-top: 120px;
-          transform-style: preserve-3d;
-        }
-
-        /* Imagen de Paw Patrol flotante */
-        .paw-patrol-image {
-          position: absolute;
-          top: -100px;
-          left: 50%;
-          transform: translateX(-50%) rotate(2deg) scale(1.05);
-          width: 320px;
-          height: auto;
-          z-index: 35;
-          filter: brightness(1.1);
-          transform-style: preserve-3d;
-          animation: float-up 6s ease-in-out infinite alternate;
-          transition: all 0.3s ease;
-        }
-
-        .paw-patrol-image img {
-          width: 100%;
-          height: auto;
-          object-fit: contain;
-          transform: translateZ(15px);
-          background: none !important;
-          border: none !important;
-          outline: none !important;
-        }
-
-        /* Nueva imagen de fondo "Happy Birthday!" */
-        .happy-birthday-bg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 90%;
-          height: 90%;
-          background-image: url('/kristel/img/imagen2.png');
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-          opacity: 0.2;
-          z-index: 5;
-          pointer-events: none;
-        }
-
-        .card-content {
-          padding: 35px;
-          padding-top: 200px;
-          position: relative;
-          z-index: 30;
-          transform: translateZ(0);
-        }
-
-        h1 {
-          font-family: 'Nunito', sans-serif;
-          color: #ff5a87;
-          font-size: 2.8rem;
-          margin-bottom: 5px;
-          letter-spacing: 1px;
-          text-shadow: 2px 2px 0px rgba(255, 198, 213, 0.8);
-          position: relative;
-          z-index: 30;
-        }
-
-        .name-highlight {
-          font-family: 'Birthstone', cursive;
-          color: #ff5a87;
-          font-weight: normal;
-          display: block;
-          padding: 0 8px;
-          font-size: 8.5rem;
-          margin: 0;
-          background: linear-gradient(45deg, #ff5a87, #ff347c, #ff7ea7);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          position: relative;
-          z-index: 35;
-          line-height: 1;
-          margin: -25px 0;
-          text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
-          animation: name-pulse 3s ease-in-out infinite;
-        }
-
-        h2 {
-          font-family: 'Nunito', sans-serif;
-          color: #9165ed;
-          font-size: 2.8rem;
-          margin-bottom: 20px;
-          text-shadow: 1px 1px 0px rgba(145, 101, 237, 0.2);
-          margin-top: 5px;
-          position: relative;
-          z-index: 30;
-        }
-
-        @keyframes name-pulse {
-          0% {
-            transform: scale(1);
-            text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
-          }
-
-          50% {
-            transform: scale(1.03);
-            text-shadow: 5px 5px 0px rgba(255, 198, 213, 0.4);
-          }
-
-          100% {
-            transform: scale(1);
-            text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
-          }
-        }
-
-        p {
-          font-size: 1.4rem;
-          margin-bottom: 25px;
-          color: #4a4a4a;
-          line-height: 1.5;
-          font-weight: 600;
-          position: relative;
-          z-index: 30;
-        }
-
-        .paw-patrol-container {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 15px;
-          margin: 25px 0;
-        }
-
-        .paw-patrol-character {
-          width: 85px;
-          height: 85px;
-          background-color: #f0e6ff;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-          border: 3px solid #9165ed;
-          animation: bounce 4s ease-in-out infinite;
-          transform-style: preserve-3d;
-        }
-
-        .paw-patrol-character:nth-child(2) {
-          animation-delay: 0.5s;
-        }
-
-        .paw-patrol-character:nth-child(3) {
-          animation-delay: 1s;
-        }
-
-        .paw-patrol-character:nth-child(4) {
-          animation-delay: 1.5s;
-        }
-
-        .character-icon {
-          font-size: 45px;
-          color: #ff5a87;
-        }
-
-        .details {
-          background-color: #f0e6ff;
-          padding: 25px;
-          border-radius: 15px;
-          margin: 30px 0;
-          border: 2px dashed #9165ed;
-          box-shadow: 0 5px 15px rgba(145, 101, 237, 0.2);
-          transform: translateZ(10px);
-        }
-
-        .details div {
-          margin: 18px 0;
-          font-size: 1.4rem;
-          color: #5e5e5e;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          gap: 15px;
-          padding: 0 20px;
-        }
-
-        .detail-icon {
-          color: #ff5a87;
-          font-size: 30px;
-          min-width: 40px;
-          text-align: center;
-        }
-
-        /* Estilo especial para el ícono de reloj */
-        .detail-icon.schedule {
-          background-color: #ff5a87;
-          color: white;
-          padding: 8px;
-          border-radius: 50%;
-          animation: clock-pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes clock-pulse {
-          0% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(255, 90, 135, 0.7);
-          }
-
-          70% {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 10px rgba(255, 90, 135, 0);
-          }
-
-          100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(255, 90, 135, 0);
-          }
-        }
-
-        .btn-confirm {
-          background-color: #ff5a87;
-          color: white;
-          border: none;
-          padding: 16px 35px;
-          font-size: 1.4rem;
-          border-radius: 50px;
-          cursor: pointer;
-          font-family: 'Nunito', sans-serif;
-          font-weight: 600;
-          transition: all 0.3s;
-          box-shadow: 0 8px 25px rgba(255, 90, 135, 0.4);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          margin: 0 auto;
-          transform: translateZ(20px);
-          position: relative;
-          overflow: hidden;
-          text-decoration: none;
-        }
-
-        .btn-decline {
-          background-color: #9e9e9e;
-          color: white;
-          border: none;
-          padding: 16px 35px;
-          font-size: 1.4rem;
-          border-radius: 50px;
-          cursor: pointer;
-          font-family: 'Nunito', sans-serif;
-          font-weight: 600;
-          transition: all 0.3s;
-          box-shadow: 0 8px 25px rgba(158, 158, 158, 0.4);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          margin: 15px auto 0;
-          transform: translateZ(20px);
-          position: relative;
-          overflow: hidden;
-          text-decoration: none;
-        }
-
-        .btn-confirm:hover {
-          transform: translateZ(20px) scale(1.05);
-          background-color: #ff347c;
-          box-shadow: 0 12px 30px rgba(255, 90, 135, 0.5);
-        }
-
-        .btn-decline:hover {
-          transform: translateZ(20px) scale(1.05);
-          background-color: #757575;
-          box-shadow: 0 12px 30px rgba(158, 158, 158, 0.5);
-        }
-
-        .btn-confirm:before {
-          content: '';
-          position: absolute;
-          top: -10px;
-          left: -10px;
-          right: -10px;
-          bottom: -10px;
-          background: linear-gradient(45deg, #ff5a87, #ff347c, #ff5a87);
-          z-index: -1;
-          border-radius: 50px;
-          animation: glowing 1.5s infinite;
-          filter: blur(10px);
-        }
-
-        .btn-decline:before {
-          content: '';
-          position: absolute;
-          top: -10px;
-          left: -10px;
-          right: -10px;
-          bottom: -10px;
-          background: linear-gradient(45deg, #9e9e9e, #757575, #9e9e9e);
-          z-index: -1;
-          border-radius: 50px;
-          animation: glowing 1.5s infinite;
-          filter: blur(10px);
-        }
-
-        .countdown {
-          display: flex;
-          justify-content: center;
-          gap: 15px;
-          margin: 20px 0;
-        }
-
-        .countdown-item {
-          background-color: #ff5a87;
-          color: white;
-          padding: 10px;
-          border-radius: 10px;
-          min-width: 70px;
-          box-shadow: 0 5px 15px rgba(255, 90, 135, 0.3);
-        }
-
-        .countdown-number {
-          font-size: 2rem;
-          font-weight: bold;
-        }
-
-        .countdown-label {
-          font-size: 0.9rem;
-        }
-
-        @keyframes float-up {
-          0% {
-            transform: translateX(-50%) rotate(2deg) scale(1.05) translateY(0);
-          }
-
-          50% {
-            transform: translateX(-50%) rotate(0deg) scale(1.1) translateY(-15px);
-          }
-
-          100% {
-            transform: translateX(-50%) rotate(-2deg) scale(1.05) translateY(0);
-          }
-        }
-
-        @keyframes bounce {
-
-          0%,
-          100% {
-            transform: translateY(0) translateZ(0);
-          }
-
-          50% {
-            transform: translateY(-15px) translateZ(10px);
-          }
-        }
-
-        @keyframes glowing {
-          0% {
-            opacity: 0.7;
-          }
-
-          50% {
-            opacity: 1;
-          }
-
-          100% {
-            opacity: 0.7;
-          }
-        }
-
-        /* Botón de confeti flotante */
-        .confetti-btn {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          background-color: #ff5a87;
-          color: white;
-          border: none;
-          box-shadow: 0 4px 15px rgba(255, 90, 135, 0.5);
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-          transition: all 0.3s ease;
-          animation: pulse 2s infinite;
-        }
-
-        .confetti-btn:hover {
-          transform: scale(1.1);
-          box-shadow: 0 6px 20px rgba(255, 90, 135, 0.7);
-        }
-
-        @keyframes pulse {
-          0% {
-            transform: scale(1);
-          }
-
-          50% {
-            transform: scale(1.05);
-          }
-
-          100% {
-            transform: scale(1);
-          }
-        }
-
-        /* Reproductor de audio */
-        .audio-player {
-          margin: 25px 0;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .audio-player-container {
-          background-color: #f0e6ff;
-          border-radius: 50px;
-          padding: 10px 20px;
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          box-shadow: 0 5px 15px rgba(145, 101, 237, 0.2);
-          border: 2px dashed #9165ed;
-          max-width: 350px;
-        }
-
-        .audio-btn {
-          background-color: #ff5a87;
-          color: white;
-          border: none;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          transition: all 0.3s;
-          box-shadow: 0 4px 10px rgba(255, 90, 135, 0.4);
-        }
-
-        .audio-btn:hover {
-          transform: scale(1.05);
-          background-color: #ff347c;
-        }
-
-        .audio-info {
-          flex: 1;
-          text-align: left;
-        }
-
-        .audio-title {
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: #5e5e5e;
-          margin: 0;
-        }
-
-        .audio-status {
-          font-size: 0.9rem;
-          color: #9165ed;
-          margin: 0;
-        }
-
-        /* Footer con créditos */
-        .credits {
-          text-align: center;
-          margin-top: 25px;
-          color: white;
-          font-size: 1rem;
-          opacity: 0.9;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-          padding: 10px;
-          position: relative;
-          z-index: 25;
-        }
-
-        .credits a {
-          color: white;
-          text-decoration: none;
-          font-weight: 600;
-          transition: all 0.3s ease;
-        }
-
-        .credits a:hover {
-          text-decoration: underline;
-          opacity: 1;
-        }
-
-        /* Media queries para responsive */
-        @media (max-width: 900px) {
-          .container {
-            max-width: 95%;
-            padding: 15px;
-          }
-
-          h1 {
-            font-size: 2.2rem;
-          }
-
-          .name-highlight {
-            font-size: 6rem;
-          }
-
-          h2 {
-            font-size: 2.2rem;
-          }
-
-          .paw-patrol-image {
-            width: 280px;
-            top: -90px;
-          }
-
-          .invitation-card {
-            padding-top: 160px;
-            margin-top: 100px;
-          }
-
-          .card-content {
-            padding: 25px 20px;
-            padding-top: 180px;
-          }
-
-          .credits {
-            font-size: 0.9rem;
-            margin-top: 20px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          h1 {
-            font-size: 2rem;
-          }
-
-          .name-highlight {
-            font-size: 5rem;
-            margin: -15px 0;
-          }
-
-          h2 {
-            font-size: 2rem;
-          }
-
-          p,
-          .details div {
-            font-size: 1.2rem;
-          }
-
-          .paw-patrol-image {
-            width: 240px;
-            top: -80px;
-          }
-
-          .invitation-card {
-            padding-top: 140px;
-            margin-top: 90px;
-          }
-
-          .card-content {
-            padding: 20px 15px;
-            padding-top: 160px;
-          }
-
-          .paw-patrol-character {
-            width: 70px;
-            height: 70px;
-          }
-
-          .character-icon {
-            font-size: 35px;
-          }
-
-          .btn-confirm,
-          .btn-decline {
-            padding: 14px 30px;
-            font-size: 1.2rem;
-          }
-
-          .details {
-            padding: 20px 15px;
-          }
-
-          .details div {
-            font-size: 1.1rem;
-            padding: 0 15px;
-          }
-
-          .confetti-btn {
-            bottom: 15px;
-            right: 15px;
-            width: 50px;
-            height: 50px;
-          }
-
-          .credits {
-            font-size: 0.85rem;
-            margin-top: 15px;
-          }
-        }
-
-        @media (max-width: 600px) {
-          h1 {
-            font-size: 1.8rem;
-          }
-
-          .name-highlight {
-            font-size: 4rem;
-            margin: -10px 0;
-          }
-
-          h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-          }
-
-          p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-          }
-
-          .paw-patrol-image {
-            width: 200px;
-            top: -70px;
-          }
-
-          .invitation-card {
-            padding-top: 120px;
-            margin-top: 80px;
-          }
-
-          .card-content {
-            padding: 15px 10px;
-            padding-top: 140px;
-          }
-
-          .countdown {
-            gap: 10px;
-            margin: 15px 0;
-          }
-
-          .countdown-item {
-            min-width: 60px;
-            padding: 8px;
-          }
-
-          .countdown-number {
-            font-size: 1.5rem;
-          }
-
-          .countdown-label {
-            font-size: 0.8rem;
-          }
-
-          .details div {
-            font-size: 1rem;
-            margin: 12px 0;
-            padding: 0 10px;
-          }
-
-          .detail-icon {
-            font-size: 24px;
-            min-width: 30px;
-          }
-
-          .audio-player-container {
-            padding: 8px 15px;
-            max-width: 300px;
-          }
-
-          .audio-btn {
-            width: 45px;
-            height: 45px;
-          }
-
-          .audio-title {
-            font-size: 1rem;
-          }
-
-          .audio-status {
-            font-size: 0.8rem;
-          }
-
-          .credits {
-            font-size: 0.8rem;
-            margin-top: 12px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          h1 {
-            font-size: 1.6rem;
-          }
-
-          .name-highlight {
-            font-size: 3.5rem;
-          }
-
-          h2 {
-            font-size: 1.6rem;
-          }
-
-          .paw-patrol-image {
-            width: 180px;
-            top: -60px;
-          }
-
-          .invitation-card {
-            padding-top: 110px;
-            margin-top: 70px;
-          }
-
-          .card-content {
-            padding: 15px 8px;
-            padding-top: 130px;
-          }
-
-          .paw-patrol-character {
-            width: 60px;
-            height: 60px;
-          }
-
-          .character-icon {
-            font-size: 30px;
-          }
-
-          .btn-confirm,
-          .btn-decline {
-            padding: 12px 25px;
-            font-size: 1.1rem;
-            width: 100%;
-            max-width: 280px;
-          }
-
-          .countdown-item {
-            min-width: 50px;
-            padding: 6px;
-          }
-
-          .countdown-number {
-            font-size: 1.3rem;
-          }
-
-          .countdown-label {
-            font-size: 0.7rem;
-          }
-
-          .confetti-btn {
-            bottom: 10px;
-            right: 10px;
-            width: 45px;
-            height: 45px;
-          }
-
-          .confetti-btn .material-icons {
-            font-size: 24px;
-          }
-
-          .credits {
-            font-size: 0.75rem;
-            margin-top: 10px;
-          }
-        }
-
-        @media (max-width: 380px) {
-          .name-highlight {
-            font-size: 3rem;
-          }
-
-          .paw-patrol-image {
-            width: 160px;
-            top: -55px;
-          }
-
-          .invitation-card {
-            padding-top: 100px;
-            margin-top: 60px;
-          }
-
-          .card-content {
-            padding-top: 120px;
-          }
-
-          .countdown {
-            gap: 5px;
-          }
-
-          .countdown-item {
-            min-width: 45px;
-            padding: 5px;
-          }
-
-          .countdown-number {
-            font-size: 1.2rem;
-          }
-
-          .countdown-label {
-            font-size: 0.65rem;
-          }
-
-          .paw-patrol-container {
-            gap: 10px;
-          }
-
-          .paw-patrol-character {
-            width: 55px;
-            height: 55px;
-          }
-
-          .character-icon {
-            font-size: 25px;
-          }
-
-          .audio-player-container {
-            max-width: 260px;
-            padding: 6px 12px;
-          }
-
-          .audio-btn {
-            width: 40px;
-            height: 40px;
-          }
-
-          .audio-title {
-            font-size: 0.9rem;
-          }
-
-          .audio-status {
-            font-size: 0.75rem;
-          }
-
-          .credits {
-            font-size: 0.7rem;
-            margin-top: 8px;
-          }
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #a18cd1 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+
+.invitation-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: visible;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  position: relative;
+  z-index: 20;
+  padding-top: 180px;
+  margin-top: 120px;
+  transform-style: preserve-3d;
+}
+
+/* Imagen de Paw Patrol flotante */
+.paw-patrol-image {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg) scale(1.05);
+  width: 320px;
+  height: auto;
+  z-index: 35;
+  filter: brightness(1.1);
+  transform-style: preserve-3d;
+  animation: float-up 6s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.paw-patrol-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: translateZ(15px);
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Nueva imagen de fondo "Happy Birthday!" */
+.happy-birthday-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background-image: url('/kristel/img/imagen2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.2;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.card-content {
+  padding: 35px;
+  padding-top: 200px;
+  position: relative;
+  z-index: 30;
+  transform: translateZ(0);
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  color: #ff5a87;
+  font-size: 2.8rem;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0px rgba(255, 198, 213, 0.8);
+  position: relative;
+  z-index: 30;
+}
+
+.name-highlight {
+  font-family: 'Birthstone', cursive;
+  color: #ff5a87;
+  font-weight: normal;
+  display: block;
+  padding: 0 8px;
+  font-size: 8.5rem;
+  margin: 0;
+  background: linear-gradient(45deg, #ff5a87, #ff347c, #ff7ea7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 35;
+  line-height: 1;
+  margin: -25px 0;
+  text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
+  animation: name-pulse 3s ease-in-out infinite;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  color: #9165ed;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 0px rgba(145, 101, 237, 0.2);
+  margin-top: 5px;
+  position: relative;
+  z-index: 30;
+}
+
+@keyframes name-pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
+  }
+
+  50% {
+    transform: scale(1.03);
+    text-shadow: 5px 5px 0px rgba(255, 198, 213, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    text-shadow: 3px 3px 0px rgba(255, 198, 213, 0.3);
+  }
+}
+
+p {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #4a4a4a;
+  line-height: 1.5;
+  font-weight: 600;
+  position: relative;
+  z-index: 30;
+}
+
+.paw-patrol-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.paw-patrol-character {
+  width: 85px;
+  height: 85px;
+  background-color: #f0e6ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid #9165ed;
+  animation: bounce 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.paw-patrol-character:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.paw-patrol-character:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.paw-patrol-character:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.character-icon {
+  font-size: 45px;
+  color: #ff5a87;
+}
+
+.details {
+  background-color: #f0e6ff;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 30px 0;
+  border: 2px dashed #9165ed;
+  box-shadow: 0 5px 15px rgba(145, 101, 237, 0.2);
+  transform: translateZ(10px);
+}
+
+.details div {
+  margin: 18px 0;
+  font-size: 1.4rem;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.detail-icon {
+  color: #ff5a87;
+  font-size: 30px;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* Estilo especial para el ícono de reloj */
+.detail-icon.schedule {
+  background-color: #ff5a87;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+  animation: clock-pulse 2s ease-in-out infinite;
+}
+
+@keyframes clock-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 90, 135, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 90, 135, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 90, 135, 0);
+  }
+}
+
+.btn-confirm {
+  background-color: #ff5a87;
+  color: white;
+  border: none;
+  padding: 16px 35px;
+  font-size: 1.4rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 8px 25px rgba(255, 90, 135, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+  transform: translateZ(20px);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-decline {
+  background-color: #9e9e9e;
+  color: white;
+  border: none;
+  padding: 16px 35px;
+  font-size: 1.4rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 8px 25px rgba(158, 158, 158, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px auto 0;
+  transform: translateZ(20px);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-confirm:hover {
+  transform: translateZ(20px) scale(1.05);
+  background-color: #ff347c;
+  box-shadow: 0 12px 30px rgba(255, 90, 135, 0.5);
+}
+
+.btn-decline:hover {
+  transform: translateZ(20px) scale(1.05);
+  background-color: #757575;
+  box-shadow: 0 12px 30px rgba(158, 158, 158, 0.5);
+}
+
+.btn-confirm:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #ff5a87, #ff347c, #ff5a87);
+  z-index: -1;
+  border-radius: 50px;
+  animation: glowing 1.5s infinite;
+  filter: blur(10px);
+}
+
+.btn-decline:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #9e9e9e, #757575, #9e9e9e);
+  z-index: -1;
+  border-radius: 50px;
+  animation: glowing 1.5s infinite;
+  filter: blur(10px);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.countdown-item {
+  background-color: #ff5a87;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 70px;
+  box-shadow: 0 5px 15px rgba(255, 90, 135, 0.3);
+}
+
+.countdown-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.countdown-label {
+  font-size: 0.9rem;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateX(-50%) rotate(2deg) scale(1.05) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) rotate(0deg) scale(1.1) translateY(-15px);
+  }
+
+  100% {
+    transform: translateX(-50%) rotate(-2deg) scale(1.05) translateY(0);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+
+  50% {
+    transform: translateY(-15px) translateZ(10px);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* Botón de confeti flotante */
+.confetti-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ff5a87;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 90, 135, 0.5);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.confetti-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 90, 135, 0.7);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Reproductor de audio */
+.audio-player {
+  margin: 25px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-player-container {
+  background-color: #f0e6ff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(145, 101, 237, 0.2);
+  border: 2px dashed #9165ed;
+  max-width: 350px;
+}
+
+.audio-btn {
+  background-color: #ff5a87;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 90, 135, 0.4);
+}
+
+.audio-btn:hover {
+  transform: scale(1.05);
+  background-color: #ff347c;
+}
+
+.audio-info {
+  flex: 1;
+  text-align: left;
+}
+
+.audio-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #5e5e5e;
+  margin: 0;
+}
+
+.audio-status {
+  font-size: 0.9rem;
+  color: #9165ed;
+  margin: 0;
+}
+
+/* Media queries para responsive */
+@media (max-width: 900px) {
+  .container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .name-highlight {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  .paw-patrol-image {
+    width: 280px;
+    top: -90px;
+  }
+
+  .invitation-card {
+    padding-top: 160px;
+    margin-top: 100px;
+  }
+
+  .card-content {
+    padding: 25px 20px;
+    padding-top: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .name-highlight {
+    font-size: 5rem;
+    margin: -15px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p,
+  .details div {
+    font-size: 1.2rem;
+  }
+
+  .paw-patrol-image {
+    width: 240px;
+    top: -80px;
+  }
+
+  .invitation-card {
+    padding-top: 140px;
+    margin-top: 90px;
+  }
+
+  .card-content {
+    padding: 20px 15px;
+    padding-top: 160px;
+  }
+
+  .paw-patrol-character {
+    width: 70px;
+    height: 70px;
+  }
+
+  .character-icon {
+    font-size: 35px;
+  }
+
+  .btn-confirm,
+  .btn-decline {
+    padding: 14px 30px;
+    font-size: 1.2rem;
+  }
+
+  .details {
+    padding: 20px 15px;
+  }
+
+  .details div {
+    font-size: 1.1rem;
+    padding: 0 15px;
+  }
+
+  .confetti-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .name-highlight {
+    font-size: 4rem;
+    margin: -10px 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .paw-patrol-image {
+    width: 200px;
+    top: -70px;
+  }
+
+  .invitation-card {
+    padding-top: 120px;
+    margin-top: 80px;
+  }
+
+  .card-content {
+    padding: 15px 10px;
+    padding-top: 140px;
+  }
+
+  .countdown {
+    gap: 10px;
+    margin: 15px 0;
+  }
+
+  .countdown-item {
+    min-width: 60px;
+    padding: 8px;
+  }
+
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+
+  .details div {
+    font-size: 1rem;
+    margin: 12px 0;
+    padding: 0 10px;
+  }
+
+  .detail-icon {
+    font-size: 24px;
+    min-width: 30px;
+  }
+
+  .audio-player-container {
+    padding: 8px 15px;
+    max-width: 300px;
+  }
+
+  .audio-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .audio-title {
+    font-size: 1rem;
+  }
+
+  .audio-status {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .name-highlight {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .paw-patrol-image {
+    width: 180px;
+    top: -60px;
+  }
+
+  .invitation-card {
+    padding-top: 110px;
+    margin-top: 70px;
+  }
+
+  .card-content {
+    padding: 15px 8px;
+    padding-top: 130px;
+  }
+
+  .paw-patrol-character {
+    width: 60px;
+    height: 60px;
+  }
+
+  .character-icon {
+    font-size: 30px;
+  }
+
+  .btn-confirm,
+  .btn-decline {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .countdown-item {
+    min-width: 50px;
+    padding: 6px;
+  }
+
+  .countdown-number {
+    font-size: 1.3rem;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+  }
+
+  .confetti-btn {
+    bottom: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .confetti-btn .material-icons {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .name-highlight {
+    font-size: 3rem;
+  }
+
+  .paw-patrol-image {
+    width: 160px;
+    top: -55px;
+  }
+
+  .invitation-card {
+    padding-top: 100px;
+    margin-top: 60px;
+  }
+
+  .card-content {
+    padding-top: 120px;
+  }
+
+  .countdown {
+    gap: 5px;
+  }
+
+  .countdown-item {
+    min-width: 45px;
+    padding: 5px;
+  }
+
+  .countdown-number {
+    font-size: 1.2rem;
+  }
+
+  .countdown-label {
+    font-size: 0.65rem;
+  }
+
+  .paw-patrol-container {
+    gap: 10px;
+  }
+
+  .paw-patrol-character {
+    width: 55px;
+    height: 55px;
+  }
+
+  .character-icon {
+    font-size: 25px;
+  }
+
+  .audio-player-container {
+    max-width: 260px;
+    padding: 6px 12px;
+  }
+
+  .audio-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .audio-title {
+    font-size: 0.9rem;
+  }
+
+  .audio-status {
+    font-size: 0.75rem;
+  }
+}

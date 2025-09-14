@@ -26,8 +26,45 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Librería js-confetti -->
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-     <link rel="stylesheet" href="/kristel/css/styles.css">
- 
+    <link rel="stylesheet" href="/kristel/css/styles.css">
+    <style>
+        /* Estilos para la marca de agua discreta */
+        .marca-agua {
+            text-align: center;
+            margin: 40px 0 10px;
+            padding: 12px 0 8px;
+            font-family: 'Georgia', serif;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 0.5px;
+            position: relative;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .marca-agua:hover {
+            opacity: 1;
+        }
+
+        .marca-agua:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 30%;
+            right: 30%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+        }
+
+        .marca-agua a {
+            color: #9165ed;
+            text-decoration: none;
+        }
+
+        .marca-agua a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -124,6 +161,12 @@
                     <span class="material-icons">sentiment_dissatisfied</span>
                     No podré asistir
                 </a>
+
+                <!-- Marca de agua discreta agregada aquí -->
+                <div class="marca-agua">
+                    Desarrollado por Yerba Digital | Publicado en <a href="https://momentoswow.com"
+                        target="_blank">momentoswow.com</a>
+                </div>
             </div>
         </div>
     </div>

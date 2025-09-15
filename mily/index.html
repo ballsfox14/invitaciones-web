@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XV Años de Mily Argueta</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #5a5a5a;
+        }
+
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .corinthia {
+            font-family: 'Corinthia', cursive;
+        }
+
+        /* Paleta de colores basada en el vestido */
+        .bg-primary-white {
+            background-color: #F8F8F8;
+        }
+
+        .bg-secondary-white {
+            background-color: #EDEDED;
+        }
+
+        .bg-pearl-gray {
+            background-color: #DCDCDC;
+        }
+
+        .text-soft-gray {
+            color: #7D7D7D;
+        }
+
+        .text-dark-gray {
+            color: #5a5a5a;
+        }
+
+        .border-custom {
+            border-color: #DCDCDC;
+        }
+
+        .accent-color {
+            color: #A8A8A8;
+        }
+
+        .bg-accent {
+            background-color: #A8A8A8;
+        }
+
+        .bg-accent:hover {
+            background-color: #989898;
+        }
+
+        /* Efecto de vidrio esmerilado */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Reproductor de audio personalizado */
+        .custom-player {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(248, 248, 248, 0.9);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #EDEDED;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: #EDEDED;
+            border-radius: 3px;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+
+        .progress {
+            height: 100%;
+            background: #A8A8A8;
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #A8A8A8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-pause {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #A8A8A8;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .play-pause:hover {
+            background: #989898;
+        }
+
+        .time {
+            font-size: 14px;
+            color: #7D7D7D;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .volume-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            margin-left: 10px;
+            -webkit-appearance: none;
+            height: 4px;
+            background: #EDEDED;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #A8A8A8;
+            cursor: pointer;
+        }
+
+        /* Estilo para carta */
+        .letter-style {
+            background-color: #F8F8F8;
+            border: 1px solid #EDEDED;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+
+        .letter-style::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(220, 220, 220, 0.3), transparent);
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Estilo para secciones con ancho consistente */
+        .section-container {
+            max-width: 72rem;
+        }
+    </style>
+</head>
+
+<body class="bg-primary-white text-dark-gray">
+    <!-- Portada principal -->
+    <header class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
+        style="background-image: url('/mily/img/1.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="text-center text-white z-10 px-4">
+            <h1 class="great-vibes text-5xl md:text-7xl lg:text-8xl mb-2">Mily Argueta</h1>
+            <p class="text-xl md:text-2xl mb-4">Mis XV Años</p>
+            <p class="text-lg md:text-xl">14 de Octubre de 2025</p>
+        </div>
+    </header>
+
+    <!-- Sección de música -->
+    <section class="py-16 bg-secondary-white">
+        <div class="container mx-auto px-4 text-center section-container" data-aos="fade-up">
+            <h2 class="corinthia text-5xl accent-color mb-8">Mi Canción Especial</h2>
+
+            <!-- Reproductor personalizado -->
+            <div class="custom-player mx-auto">
+                <div class="text-lg great-vibes accent-color mb-2">Moonlight - Ariana Grande</div>
+
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div>
+
+                <div class="player-controls">
+                    <span class="time" id="current-time">0:00</span>
+
+                    <button class="control-btn prev-btn">
+                        <span class="material-icons">skip_previous</span>
+                    </button>
+
+                    <button class="control-btn play-pause" id="play">
+                        <span class="material-icons" id="play-icon">play_arrow</span>
+                    </button>
+
+                    <button class="control-btn next-btn">
+                        <span class="material-icons">skip_next</span>
+                    </button>
+
+                    <span class="time" id="duration">0:00</span>
+                </div>
+
+                <div class="volume-container justify-center mt-4">
+                    <span class="material-icons accent-color">volume_up</span>
+                    <input type="range" class="volume-slider" id="volume" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+
+            <!-- Elemento de audio oculto -->
+            <audio id="audio" src="/mily/audio/Moonlight.mp3"></audio>
+        </div>
+    </section>
+
+    <!-- Mensaje especial -->
+    <section class="py-16 bg-primary-white">
+        <div class="container mx-auto px-4 section-container" data-aos="fade-up">
+            <h2 class="corinthia text-5xl accent-color text-center mb-8">Un Mensaje Para Ti</h2>
+            <div class="letter-style rounded-2xl p-8 md:p-12">
+                <div class="text-lg leading-relaxed text-justify text-soft-gray">
+                    <p class="mb-6">Queridos amigos y familiares,</p>
+                    <p class="mb-6">Me llena de alegría poder compartir con ustedes este día tan especial en mi vida.
+                        Después de tanto esperar, por fin llegó el momento de celebrar mis quince años, una fecha que
+                        marcará para siempre el inicio de una nueva etapa.</p>
+                    <p class="mb-6">Agradezco a mis padres por hacer posible este sueño y a cada uno de ustedes por
+                        formar
+                        parte de mi vida. Su presencia es el regalo más valioso que podría recibir en este día.</p>
+                    <p class="mb-6">Espero que disfruten cada momento de esta celebración, llena de amor, alegría y
+                        buenos
+                        deseos.</p>
+                    <p class="text-right mt-8">Con cariño,<br><span
+                            class="great-vibes text-2xl accent-color">Mily</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contador regresivo -->
+    <section class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center relative py-16"
+        style="background-image: url('/mily/img/2.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="text-center text-white z-10 px-4 section-container" data-aos="fade-up">
+            <h2 class="corinthia text-5xl text-white mb-12">Faltan</h2>
+            <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="glass-effect rounded-xl p-4 md:p-6">
+                    <div id="days" class="text-3xl md:text-5xl font-bold mb-2 text-white">00</div>
+                    <div class="text-sm md:text-base text-white">Días</div>
+                </div>
+                <div class="glass-effect rounded-xl p-4 md:p-6">
+                    <div id="hours" class="text-3xl md:text-5xl font-bold mb-2 text-white">00</div>
+                    <div class="text-sm md:text-base text-white">Horas</div>
+                </div>
+                <div class="glass-effect rounded-xl p-4 md:p-6">
+                    <div id="minutes" class="text-3xl md:text-5xl font-bold mb-2 text-white">00</div>
+                    <div class="text-sm md:text-base text-white">Minutos</div>
+                </div>
+                <div class="glass-effect rounded-xl p-4 md:p-6">
+                    <div id="seconds" class="text-3xl md:text-5xl font-bold mb-2 text-white">00</div>
+                    <div class="text-sm md:text-base text-white">Segundos</div>
+                </div>
+            </div>
+            <p class="text-xl md:text-2xl mt-8 great-vibes text-white">¡Te esperamos con mucha ilusión!</p>
+        </div>
+    </section>
+
+    <!-- Lugar y hora del evento -->
+    <section class="py-16 bg-secondary-white">
+        <div class="container mx-auto px-4 section-container" data-aos="fade-up">
+            <h2 class="corinthia text-5xl accent-color text-center mb-8">Lugar y Hora del Evento</h2>
+
+            <p class="text-center text-soft-gray mb-12 max-w-2xl mx-auto">
+                "A continuación encontrarás el horario y ubicación de los eventos de mi celebración"
+            </p>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-primary-white rounded-2xl p-8 text-center shadow-sm border border-custom">
+                    <div class="mb-6">
+                        <span class="material-icons text-5xl accent-color">church</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 great-vibes accent-color">Ceremonia</h3>
+                    <div class="flex items-center justify-center mb-3">
+                        <span class="material-icons accent-color mr-2">schedule</span>
+                        <p class="text-lg text-dark-gray">4:00 p.m.</p>
+                    </div>
+                    <div class="flex items-center justify-center mb-6">
+                        <span class="material-icons accent-color mr-2">location_on</span>
+                        <p class="text-lg text-dark-gray">Parroquia Señor de Ostúa, Metapán</p>
+                    </div>
+                    <a href="https://goo.gl/maps/example" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-pearl-gray text-dark-gray rounded-full hover:bg-gray-300 transition duration-300 text-sm">
+                        <span class="material-icons mr-1 text-sm">map</span>
+                        Ver en mapa
+                    </a>
+                </div>
+
+                <div class="bg-primary-white rounded-2xl p-8 text-center shadow-sm border border-custom">
+                    <div class="mb-6">
+                        <span class="material-icons text-5xl accent-color">celebration</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 great-vibes accent-color">Recepción</h3>
+                    <div class="flex items-center justify-center mb-3">
+                        <span class="material-icons accent-color mr-2">schedule</span>
+                        <p class="text-lg text-dark-gray">5:00 p.m.</p>
+                    </div>
+                    <div class="flex items-center justify-center mb-6">
+                        <span class="material-icons accent-color mr-2">location_on</span>
+                        <p class="text-lg text-dark-gray">Casa Blanca, a un costado de la Iglesia San Pedro, Metapán</p>
+                    </div>
+                    <a href="https://goo.gl/maps/example" target="_blank"
+                        class="inline-flex items-center px-4 py-2 bg-pearl-gray text-dark-gray rounded-full hover:bg-gray-300 transition duration-300 text-sm">
+                        <span class="material-icons mr-1 text-sm">map</span>
+                        Ver en mapa
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://goo.gl/maps/example" target="_blank"
+                    class="inline-flex items-center px-6 py-3 bg-accent text-white rounded-full hover:bg-accent transition duration-300 shadow-sm">
+                    <span class="material-icons mr-2">map</span>
+                    Ver mapa completo de ubicaciones
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmación de asistencia -->
+    <section class="py-16 bg-primary-white">
+        <div class="container mx-auto px-4 section-container" data-aos="fade-up">
+            <h2 class="corinthia text-5xl accent-color text-center mb-8">Confirmación de Asistencia</h2>
+            <form id="attendance-form"
+                class="max-w-xl mx-auto bg-primary-white rounded-2xl p-6 md:p-8 shadow-sm border border-custom">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-dark-gray">Nombre de la familia o grupo</label>
+                    <input type="text" id="name" required
+                        class="w-full px-4 py-3 border border-custom rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 bg-white">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 text-dark-gray">¿Asistirán?</label>
+                    <div class="flex space-x-6">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attendance" value="yes" required
+                                class="form-radio text-gray-500 h-5 w-5">
+                            <span class="ml-2 text-dark-gray">Sí</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="attendance" value="no" class="form-radio text-gray-500 h-5 w-5">
+                            <span class="ml-2 text-dark-gray">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="people" class="block mb-2 text-dark-gray">Número de personas</label>
+                    <input type="number" id="people" min="1"
+                        class="w-full px-4 py-3 border border-custom rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 bg-white">
+                </div>
+
+                <div class="mb-8">
+                    <label for="message" class="block mb-2 text-dark-gray">Mensaje opcional para Mily</label>
+                    <textarea id="message" rows="4"
+                        class="w-full px-4 py-3 border border-custom rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 bg-white"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-accent text-white py-3 px-4 rounded-lg hover:bg-accent transition duration-300 shadow-sm">
+                    Confirmar Asistencia
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Regalos -->
+    <section class="py-16 bg-secondary-white">
+        <div class="container mx-auto px-4 section-container" data-aos="fade-up">
+            <h2 class="corinthia text-5xl accent-color text-center mb-8">Detalles Importantes</h2>
+            <div class="max-w-2xl mx-auto bg-primary-white rounded-2xl p-8 md:p-10 shadow-sm border border-custom">
+                <div class="text-center">
+                    <div
+                        class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10">
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-4xl accent-color mb-3">card_giftcard</span>
+                            <p class="text-lg text-center text-dark-gray">Se agradece su muestra de cariño en sobres</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="material-icons text-4xl accent-color mb-3">photo_camera</span>
+                            <p class="text-lg text-center text-dark-gray">No olvides tomarte una foto con la quinceañera
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de fotos -->
+    <section class="py-16 bg-primary-white">
+        <div class="container mx-auto px-4 section-container">
+            <h2 class="corinthia text-5xl accent-color text-center mb-12">Galería</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="overflow-hidden rounded-2xl" data-aos="zoom-in">
+                    <img src="/mily/img/3.jpg" alt="Mily"
+                        class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="/mily/img/4.jpg" alt="Mily"
+                        class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="/mily/img/5.jpg" alt="Mily"
+                        class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="/mily/img/6.jpg" alt="Mily"
+                        class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-pearl-gray text-center">
+        <p class="text-dark-gray">Con el cariño de Mily y su familia</p>
+        <p class="mt-2 great-vibes text-2xl accent-color">¡Te esperamos el 14 de Octubre de 2025!</p>
+    </footer>
+
+    <script>
+        // Inicializar AOS
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out'
+            });
+
+            // Inicializar el reproductor de audio
+            initAudioPlayer();
+        });
+
+        // Contador regresivo
+        function updateCountdown() {
+            const targetDate = new Date('October 14, 2025 16:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Manejo del formulario
+        document.getElementById('attendance-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Gracias por confirmar tu asistencia! Tu respuesta ha sido registrada.');
+            this.reset();
+        });
+
+        // Reproductor de audio personalizado
+        function initAudioPlayer() {
+            const audio = document.getElementById('audio');
+            const playBtn = document.getElementById('play');
+            const playIcon = document.getElementById('play-icon');
+            const progress = document.getElementById('progress');
+            const progressContainer = document.getElementById('progress-container');
+            const currentTimeEl = document.getElementById('current-time');
+            const durationEl = document.getElementById('duration');
+            const volumeSlider = document.getElementById('volume');
+
+            // Reproducir / pausar
+            function togglePlay() {
+                if (audio.paused) {
+                    audio.play();
+                    playIcon.textContent = 'pause';
+                } else {
+                    audio.pause();
+                    playIcon.textContent = 'play_arrow';
+                }
+            }
+
+            // Formatear tiempo
+            function formatTime(seconds) {
+                const min = Math.floor(seconds / 60);
+                const sec = Math.floor(seconds % 60);
+                return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+            }
+
+            // Actualizar barra de progreso
+            function updateProgress() {
+                const { currentTime, duration } = audio;
+                const progressPercent = (currentTime / duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(currentTime);
+                durationEl.textContent = formatTime(duration);
+            }
+
+            // Establecer progreso al hacer clic en la barra
+            function setProgress(e) {
+                const width = this.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            }
+
+            // Establecer volumen
+            function setVolume() {
+                audio.volume = volumeSlider.value;
+            }
+
+            // Event listeners
+            playBtn.addEventListener('click', togglePlay);
+            audio.addEventListener('timeupdate', updateProgress);
+            audio.addEventListener('ended', () => {
+                playIcon.textContent = 'play_arrow';
+                progress.style.width = '0%';
+            });
+            progressContainer.addEventListener('click', setProgress);
+            volumeSlider.addEventListener('input', setVolume);
+
+            // Inicializar duración
+            audio.addEventListener('loadedmetadata', () => {
+                durationEl.textContent = formatTime(audio.duration);
+            });
+        }
+    </script>
+</body>
+
+</html>

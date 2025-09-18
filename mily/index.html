@@ -5,6 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XV Años de Mily Argueta</title>
+
+    <!-- Metaetiquetas para redes sociales -->
+    <meta property="og:title" content="XV Años de Mily Argueta">
+    <meta property="og:description" content="Celebración de los XV Años de Mily Argueta - 18 de Octubre de 2025">
+    <meta property="og:image" content="https://www.momentoswow.com/mily/img/1.webp">
+    <meta property="og:url" content="https://www.momentoswow.com/mily/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XV Años de Mily Argueta">
+    <meta name="twitter:description" content="Celebración de los XV Años de Mily Argueta - 18 de Octubre de 2025">
+    <meta name="twitter:image" content="https://www.momentoswow.com/mily/img/1.webp">
+
+    <meta name="description" content="Celebración de los XV Años de Mily Argueta - 18 de Octubre de 2025">
+
+    <link rel="shortcut icon" href="/mily/img/ico.png" type="image/x-icon">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -18,6 +34,8 @@
     <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: 'Playfair Display', serif;
@@ -190,18 +208,40 @@
         .section-container {
             max-width: 72rem;
         }
+
+        /* Estilos para SweetAlert2 personalizados */
+        .swal2-popup {
+            border-radius: 20px !important;
+            background: #F8F8F8 !important;
+            color: #5a5a5a !important;
+        }
+
+        .swal2-title {
+            font-family: 'Great Vibes', cursive !important;
+            font-size: 2rem !important;
+            color: #A8A8A8 !important;
+        }
+
+        .swal2-confirm {
+            background-color: #A8A8A8 !important;
+            border-radius: 10px !important;
+        }
+
+        .swal2-confirm:hover {
+            background-color: #989898 !important;
+        }
     </style>
 </head>
 
 <body class="bg-primary-white text-dark-gray">
     <!-- Portada principal -->
     <header class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
-        style="background-image: url('/mily/img/1.jpg');">
+        style="background-image: url('/mily/img/1.webp');">
         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
         <div class="text-center text-white z-10 px-4">
             <h1 class="great-vibes text-5xl md:text-7xl lg:text-8xl mb-2">Mily Argueta</h1>
             <p class="text-xl md:text-2xl mb-4">Mis XV Años</p>
-            <p class="text-lg md:text-xl">14 de Octubre de 2025</p>
+            <p class="text-lg md:text-xl">18 de Octubre de 2025</p>
         </div>
     </header>
 
@@ -272,7 +312,7 @@
 
     <!-- Contador regresivo -->
     <section class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center relative py-16"
-        style="background-image: url('/mily/img/2.jpg');">
+        style="background-image: url('/mily/img/2.webp');">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="text-center text-white z-10 px-4 section-container" data-aos="fade-up">
             <h2 class="corinthia text-5xl text-white mb-12">Faltan</h2>
@@ -367,7 +407,7 @@
                 class="max-w-xl mx-auto bg-primary-white rounded-2xl p-6 md:p-8 shadow-sm border border-custom">
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-dark-gray">Nombre de la familia o grupo</label>
-                    <input type="text" id="name" required
+                    <input type="text" id="name" required placeholder="Ej. Familia Argueta"
                         class="w-full px-4 py-3 border border-custom rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 bg-white">
                 </div>
 
@@ -375,21 +415,15 @@
                     <label class="block mb-2 text-dark-gray">¿Asistirán?</label>
                     <div class="flex space-x-6">
                         <label class="inline-flex items-center">
-                            <input type="radio" name="attendance" value="yes" required
+                            <input type="radio" name="attendance" value="Sí" required
                                 class="form-radio text-gray-500 h-5 w-5">
                             <span class="ml-2 text-dark-gray">Sí</span>
                         </label>
                         <label class="inline-flex items-center">
-                            <input type="radio" name="attendance" value="no" class="form-radio text-gray-500 h-5 w-5">
+                            <input type="radio" name="attendance" value="No" class="form-radio text-gray-500 h-5 w-5">
                             <span class="ml-2 text-dark-gray">No</span>
                         </label>
                     </div>
-                </div>
-
-                <div class="mb-6">
-                    <label for="people" class="block mb-2 text-dark-gray">Número de personas</label>
-                    <input type="number" id="people" min="1"
-                        class="w-full px-4 py-3 border border-custom rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-400 bg-white">
                 </div>
 
                 <div class="mb-8">
@@ -435,19 +469,19 @@
             <h2 class="corinthia text-5xl accent-color text-center mb-12">Galería</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="overflow-hidden rounded-2xl" data-aos="zoom-in">
-                    <img src="/mily/img/3.jpg" alt="Mily"
+                    <img src="/mily/img/3.webp" alt="Mily"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
                 <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="/mily/img/4.jpg" alt="Mily"
+                    <img src="/mily/img/4.webp" alt="Mily"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="/mily/img/5.jpg" alt="Mily"
+                <div class="overflow-hidden rounded-2vl" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="/mily/img/5.webp" alt="Mily"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
                 <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="/mily/img/6.jpg" alt="Mily"
+                    <img src="/mily/img/6.webp" alt="Mily"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
             </div>
@@ -455,9 +489,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-pearl-gray text-center">
-        <p class="text-dark-gray">Con el cariño de Mily y su familia</p>
-        <p class="mt-2 great-vibes text-2xl accent-color">¡Te esperamos el 14 de Octubre de 2025!</p>
+    <footer class="py-8 bg-pearl-gray text-center">
+        <p class="text-dark-gray text-sm">Desarrollado por Yerba Digital | Publicado en momentoswow.com</p>
+        <p class="mt-2 great-vibes text-2xl accent-color">¡Te esperamos el 18 de Octubre de 2025!</p>
     </footer>
 
     <script>
@@ -471,11 +505,14 @@
 
             // Inicializar el reproductor de audio
             initAudioPlayer();
+
+            // Configurar el manejador del formulario
+            setupFormHandler();
         });
 
         // Contador regresivo
         function updateCountdown() {
-            const targetDate = new Date('October 14, 2025 16:00:00').getTime();
+            const targetDate = new Date('October 18, 2025 16:00:00').getTime();
             const now = new Date().getTime();
             const distance = targetDate - now;
 
@@ -492,13 +529,6 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-        // Manejo del formulario
-        document.getElementById('attendance-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('¡Gracias por confirmar tu asistencia! Tu respuesta ha sido registrada.');
-            this.reset();
-        });
 
         // Reproductor de audio personalizado
         function initAudioPlayer() {
@@ -564,6 +594,83 @@
             // Inicializar duración
             audio.addEventListener('loadedmetadata', () => {
                 durationEl.textContent = formatTime(audio.duration);
+            });
+        }
+
+        // Configurar el manejador del formulario para Google Apps Script
+        function setupFormHandler() {
+            const form = document.getElementById('attendance-form');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Obtener los valores del formulario
+                const name = document.getElementById('name').value;
+                const attendance = document.querySelector('input[name="attendance"]:checked').value;
+                const message = document.getElementById('message').value;
+
+                // URL de tu script de Google Apps Script
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbznB8vBESihXA-WttHrwyV1PYfOwjwC5HmA3yCr7nDGqGZTGgS39Chvkv1NXDXj5hBO/exec';
+
+                // Mostrar alerta de carga
+                Swal.fire({
+                    title: 'Enviando confirmación',
+                    text: 'Por favor espera un momento...',
+                    icon: 'info',
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    willOpen: () => {
+                        Swal.showLoading();
+                    },
+                    background: '#F8F8F8',
+                    color: '#5a5a5a',
+                    iconColor: '#A8A8A8'
+                });
+
+                // Enviar datos a Google Apps Script
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('attendance', attendance);
+                formData.append('message', message);
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            Swal.fire({
+                                title: '¡Confirmación Exitosa!',
+                                html: `<div class="text-center">
+                                    <p class="text-lg text-soft-gray mb-4">¡Gracias por confirmar tu asistencia, ${name}!</p>
+                                    <p class="text-md text-soft-gray">Tu respuesta ha sido registrada exitosamente.</p>
+                                    <p class="text-md text-soft-gray mt-3">Mily estará feliz de saber que estarás presente en este día especial.</p>
+                                </div>`,
+                                icon: 'success',
+                                confirmButtonText: 'Entendido',
+                                background: '#F8F8F8',
+                                color: '#5a5a5a',
+                                confirmButtonColor: '#A8A8A8',
+                                iconColor: '#A8A8A8'
+                            });
+                            form.reset();
+                        } else {
+                            throw new Error('Error en la respuesta del servidor');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Hubo un error al enviar la confirmación. Por favor, intenta de nuevo.',
+                            icon: 'error',
+                            confirmButtonText: 'Entendido',
+                            background: '#F8F8F8',
+                            color: '#5a5a5a',
+                            confirmButtonColor: '#A8A8A8',
+                            iconColor: '#A8A8A8'
+                        });
+                    });
             });
         }
     </script>

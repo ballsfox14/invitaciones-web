@@ -4,38 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XV Años de Mily Argueta</title>
+    <title>XV Años de Sarai Argueta</title>
 
     <!-- Metaetiquetas para redes sociales -->
-    <meta property="og:title" content="XV Años de Mily Argueta">
-    <meta property="og:description" content="Celebración de los XV Años de Mily Argueta - 18 de Octubre de 2025">
-    <meta property="og:image" content="https://www.momentoswow.com/mily/img/1.webp  ">
-    <meta property="og:url" content="https://www.momentoswow.com/mily/  ">
+    <meta property="og:title" content="XV Años de Sarai Argueta">
+    <meta property="og:description" content="Celebración de los XV Años de Sarai Argueta - 18 de Octubre de 2025">
+    <meta property="og:image" content="https://www.momentoswow.com/mily/img/1.webp">
+    <meta property="og:url" content="https://www.momentoswow.com/mily/">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="XV Años de Mily Argueta">
-    <meta name="twitter:description" content="Celebración de los XV Años de Mily Argueta - 18 de Octubre de 2025">
-    <meta name="twitter:image" content="https://www.momentoswow.com/mily/img/1.webp  ">
+    <meta name="twitter:title" content="XV Años de Sarai Argueta">
+    <meta name="twitter:description" content="Celebración de los XV Años de Sarai Argueta - 18 de Octubre de 2025">
+    <meta name="twitter:image" content="https://www.momentoswow.com/mily/img/1.webp">
 
-    <meta name="description" content="Celebración de los XV Años de Mily Argueta - 18 de Octubre de 2025">
+    <meta name="description" content="Celebración de los XV Años de Sarai Argueta - 18 de Octubre de 2025">
 
     <link rel="shortcut icon" href="/mily/img/ico.png" type="image/x-icon">
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com  "></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com  ">
-    <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Festive&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
     <!-- Material Icons -->
-    <link href="  https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- AOS (Animate On Scroll) -->
-    <link href="  https://unpkg.com/aos@2.3.1/dist/aos.css  " rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js  "></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11  "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: 'Playfair Display', serif;
@@ -48,6 +48,10 @@
 
         .corinthia {
             font-family: 'Corinthia', cursive;
+        }
+
+        .festive {
+            font-family: 'Festive', cursive;
         }
 
         /* Paleta de colores basada en el vestido */
@@ -85,6 +89,19 @@
 
         .bg-accent:hover {
             background-color: #989898;
+        }
+
+        /* Color personalizado para cards - Mejorado para mejor contraste */
+        .bg-card-blue {
+            background-color: #B4C4D9;
+        }
+
+        .text-card-dark {
+            color: #4A5568;
+        }
+
+        .border-card {
+            border-color: #9BA9BF;
         }
 
         /* Efecto de vidrio esmerilado */
@@ -217,8 +234,8 @@
         }
 
         .swal2-title {
-            font-family: 'Great Vibes', cursive !important;
-            font-size: 2rem !important;
+            font-family: 'Festive', cursive !important;
+            font-size: 2.5rem !important;
             color: #A8A8A8 !important;
         }
 
@@ -260,14 +277,30 @@
             filter: brightness(0) invert(1);
         }
 
-        /* Tarjeta de código de vestimenta */
+        /* Tarjeta de código de vestimenta - Mejorada para mejor contraste */
         .dress-code-card {
-            background: linear-gradient(135deg, #F8F8F8 0%, #EDEDED 100%);
-            border: 1px solid #DCDCDC;
+            background: linear-gradient(135deg, #B4C4D9 0%, #B4C4D9 100%);
+            border: 1px solid #9BA9BF;
             border-radius: 20px;
             padding: 30px;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            color: #4A5568;
+        }
+
+        /* Mejoras de legibilidad para títulos importantes */
+        .card-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .dress-code-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -278,7 +311,7 @@
         style="background-image: url('/mily/img/1.webp');">
         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
         <div class="text-center text-white z-10 px-4">
-            <h1 class="great-vibes text-5xl md:text-7xl lg:text-8xl mb-2">Mily Argueta</h1>
+            <h1 class="festive text-5xl md:text-7xl lg:text-8xl mb-2">Sarai Argueta</h1>
             <p class="text-xl md:text-2xl mb-4">Mis XV Años</p>
             <p class="text-lg md:text-xl">18 de Octubre de 2025</p>
         </div>
@@ -287,7 +320,7 @@
     <!-- Sección de música -->
     <section class="py-16 bg-secondary-white">
         <div class="container mx-auto px-4 text-center section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl accent-color mb-8">Mi Canción Especial</h2>
+            <h2 class="festive text-5xl accent-color mb-8">Mi Canción Especial</h2>
 
             <!-- Reproductor personalizado -->
             <div class="custom-player mx-auto">
@@ -329,7 +362,7 @@
     <!-- Mensaje especial -->
     <section class="py-16 bg-primary-white">
         <div class="container mx-auto px-4 section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl accent-color text-center mb-8">Un Mensaje Para Ti</h2>
+            <h2 class="festive text-5xl accent-color text-center mb-8">Un Mensaje Para Ti</h2>
             <div class="letter-style rounded-2xl p-8 md:p-12">
                 <div class="text-lg leading-relaxed text-justify text-soft-gray">
                     <p class="mb-6">Queridos amigos y familiares,</p>
@@ -342,8 +375,8 @@
                     <p class="mb-6">Espero que disfruten cada momento de esta celebración, llena de amor, alegría y
                         buenos
                         deseos.</p>
-                    <p class="text-right mt-8">Con cariño,<br><span
-                            class="great-vibes text-2xl accent-color">Mily</span></p>
+                    <p class="text-right mt-8">Con cariño,<br><span class="festive text-2xl accent-color">Sarai</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -354,7 +387,7 @@
         style="background-image: url('/mily/img/2.webp');">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="text-center text-white z-10 px-4 section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl text-white mb-12">Faltan</h2>
+            <h2 class="festive text-5xl text-white mb-12">Faltan</h2>
             <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div class="glass-effect rounded-xl p-4 md:p-6">
                     <div id="days" class="text-3xl md:text-5xl font-bold mb-2 text-white">00</div>
@@ -380,50 +413,50 @@
     <!-- Lugar y hora del evento -->
     <section class="py-16 bg-secondary-white">
         <div class="container mx-auto px-4 section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl accent-color text-center mb-8">Lugar y Hora del Evento</h2>
+            <h2 class="festive text-5xl accent-color text-center mb-8">Lugar y Hora del Evento</h2>
 
             <p class="text-center text-soft-gray mb-12 max-w-2xl mx-auto">
                 "A continuación encontrarás el horario y ubicación de los eventos de mi celebración"
             </p>
 
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="bg-primary-white rounded-2xl p-8 text-center shadow-sm border border-custom">
+                <div class="bg-card-blue rounded-2xl p-8 text-center shadow-sm border border-card text-card-dark">
                     <div class="mb-6">
-                        <span class="material-icons text-5xl accent-color">church</span>
+                        <span class="material-icons text-5xl text-card-dark">church</span>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4 great-vibes accent-color">Ceremonia</h3>
+                    <h3 class="card-title festive text-card-dark">Ceremonia</h3>
                     <div class="flex items-center justify-center mb-3">
-                        <span class="material-icons accent-color mr-2">schedule</span>
-                        <p class="text-lg text-dark-gray">4:00 p.m.</p>
+                        <span class="material-icons text-card-dark mr-2">schedule</span>
+                        <p class="text-lg text-card-dark">4:00 p.m.</p>
                     </div>
                     <div class="flex items-center justify-center mb-6">
-                        <span class="material-icons accent-color mr-2">location_on</span>
-                        <p class="text-lg text-dark-gray">Parroquia Señor de Ostúa, Metapán</p>
+                        <span class="material-icons text-card-dark mr-2">location_on</span>
+                        <p class="text-lg text-card-dark">Parroquia Señor de Ostúa, Metapán</p>
                     </div>
-                    <a href="https://www.google.com/maps/place/Iglesia+de+Nuestro+Se  ñor+de+Ostua/@14.3364732,-89.4508881,17z/data=!3m1!4b1!4m6!3m5!1s0x8f62544c4bda06e5:0x2885da4934a268a3!8m2!3d14.3364732!4d-89.4483132!16s%2Fg%2F11b8v0vq_q?entry=ttu"
+                    <a href="https://www.google.com/maps/place/Iglesia+de+Nuestro+Señor+de+Ostua/@14.3364732,-89.4508881,17z/data=!3m1!4b1!4m6!3m5!1s0x8f62544c4bda06e5:0x2885da4934a268a3!8m2!3d14.3364732!4d-89.4483132!16s%2Fg%2F11b8v0vq_q?entry=ttu"
                         target="_blank"
-                        class="inline-flex items-center px-4 py-2 bg-pearl-gray text-dark-gray rounded-full hover:bg-gray-300 transition duration-300 text-sm">
+                        class="inline-flex items-center px-4 py-2 bg-white text-dark-gray rounded-full hover:bg-gray-100 transition duration-300 text-sm">
                         <span class="material-icons mr-1 text-sm">map</span>
                         Ver en mapa
                     </a>
                 </div>
 
-                <div class="bg-primary-white rounded-2xl p-8 text-center shadow-sm border border-custom">
+                <div class="bg-card-blue rounded-2xl p-8 text-center shadow-sm border border-card text-card-dark">
                     <div class="mb-6">
-                        <span class="material-icons text-5xl accent-color">celebration</span>
+                        <span class="material-icons text-5xl text-card-dark">celebration</span>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4 great-vibes accent-color">Recepción</h3>
+                    <h3 class="card-title festive text-card-dark">Recepción</h3>
                     <div class="flex items-center justify-center mb-3">
-                        <span class="material-icons accent-color mr-2">schedule</span>
-                        <p class="text-lg text-dark-gray">5:00 p.m.</p>
+                        <span class="material-icons text-card-dark mr-2">schedule</span>
+                        <p class="text-lg text-card-dark">5:00 p.m.</p>
                     </div>
                     <div class="flex items-center justify-center mb-6">
-                        <span class="material-icons accent-color mr-2">location_on</span>
-                        <p class="text-lg text-dark-gray">Casa Blanca, a un costado de la Iglesia San Pedro, Metapán</p>
+                        <span class="material-icons text-card-dark mr-2">location_on</span>
+                        <p class="text-lg text-card-dark">Casa Blanca, a un costado de la Iglesia San Pedro, Metapán</p>
                     </div>
-                    <a href="https://www.google.com/maps/place/Casa+Blanca/@14.3325726  ,-89.4480282,19z/data=!3m1!4b1!4m6!3m5!1s0x8f62550009fcdd13:0x42e9cf0b83d94a44!8m2!3d14.3325726!4d-89.4474533!16s%2Fg%2F11s7s7w1y0?entry=ttu"
+                    <a href="https://www.google.com/maps/place/Casa+Blanca/@14.3325726,-89.4480282,19z/data=!3m1!4b1!4m6!3m5!1s0x8f62550009fcdd13:0x42e9cf0b83d94a44!8m2!3d14.3325726!4d-89.4474533!16s%2Fg%2F11s7s7w1y0?entry=ttu"
                         target="_blank"
-                        class="inline-flex items-center px-4 py-2 bg-pearl-gray text-dark-gray rounded-full hover:bg-gray-300 transition duration-300 text-sm">
+                        class="inline-flex items-center px-4 py-2 bg-white text-dark-gray rounded-full hover:bg-gray-100 transition duration-300 text-sm">
                         <span class="material-icons mr-1 text-sm">map</span>
                         Ver en mapa
                     </a>
@@ -435,14 +468,14 @@
     <!-- Nueva sección: Código de vestimenta -->
     <section class="py-16 bg-primary-white">
         <div class="container mx-auto px-4 section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl accent-color text-center mb-8">Código de Vestimenta</h2>
+            <h2 class="festive text-5xl accent-color text-center mb-8">Código de Vestimenta</h2>
 
             <div class="dress-code-card max-w-md mx-auto">
                 <div class="mb-6">
-                    <span class="material-icons text-6xl accent-color">star</span>
+                    <span class="material-icons text-6xl text-card-dark">star</span>
                 </div>
-                <h3 class="text-3xl great-vibes accent-color mb-4">Gala</h3>
-                <p class="text-lg text-soft-gray">Te invitamos a vestir con elegancia para esta ocasión tan especial</p>
+                <h3 class="dress-code-title festive text-card-dark">Gala</h3>
+                <p class="text-lg text-card-dark">Te invitamos a vestir con elegancia para esta ocasión tan especial</p>
             </div>
         </div>
     </section>
@@ -452,7 +485,7 @@
         style="background-image: url('/mily/img/3.webp');">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="text-center text-white z-10 px-4 section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl text-white mb-8">Confirma Tu Asistencia</h2>
+            <h2 class="festive text-5xl text-white mb-8">Confirma Tu Asistencia</h2>
 
             <div class="glass-effect rounded-2xl p-8 md:p-10 max-w-2xl mx-auto mb-8">
                 <p class="text-xl md:text-2xl mb-6 text-white">Tu presencia es el regalo más valioso que podría recibir
@@ -460,32 +493,31 @@
                 <p class="text-lg md:text-xl mb-8 text-white">Por favor, confirma tu asistencia para poder preparar todo
                     con mucho amor</p>
 
-                <a href="https://wa.me/50372742403?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20años%20de%20Mily%20el%2018%20de%20Octubre%20de%202025.%20¡Nos%20vemos%20allí!%20🥳"
+                <a href="https://wa.me/50372742403?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20años%20de%20Sarai%20el%2018%20de%20Octubre%20de%202025.%20¡Nos%20vemos%20allí!%20🥳"
                     class="whatsapp-btn" target="_blank">
                     <span class="material-icons">celebration</span>
-                    Confirmar Asistencia
+                    Confirmar asistencia a mamá de Sarai
                 </a>
             </div>
-
-            <p class="text-lg text-white mt-8">Puedes escribirle directamente a Vita (la mamá de Mily)</p>
         </div>
     </section>
 
     <!-- Regalos -->
     <section class="py-16 bg-secondary-white">
         <div class="container mx-auto px-4 section-container" data-aos="fade-up">
-            <h2 class="corinthia text-5xl accent-color text-center mb-8">Detalles Importantes</h2>
-            <div class="max-w-2xl mx-auto bg-primary-white rounded-2xl p-8 md:p-10 shadow-sm border border-custom">
+            <h2 class="festive text-5xl accent-color text-center mb-8">Detalles Importantes</h2>
+            <div
+                class="max-w-2xl mx-auto bg-card-blue rounded-2xl p-8 md:p-10 shadow-sm border border-card text-card-dark">
                 <div class="text-center">
                     <div
                         class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10">
                         <div class="flex flex-col items-center">
-                            <span class="material-icons text-4xl accent-color mb-3">card_giftcard</span>
-                            <p class="text-lg text-center text-dark-gray">Se agradece su muestra de cariño en sobres</p>
+                            <span class="material-icons text-4xl text-card-dark mb-3">card_giftcard</span>
+                            <p class="text-lg text-center text-card-dark">Se agradece su muestra de cariño en sobres</p>
                         </div>
                         <div class="flex flex-col items-center">
-                            <span class="material-icons text-4xl accent-color mb-3">photo_camera</span>
-                            <p class="text-lg text-center text-dark-gray">No olvides tomarte una foto con la quinceañera
+                            <span class="material-icons text-4xl text-card-dark mb-3">photo_camera</span>
+                            <p class="text-lg text-center text-card-dark">No olvides tomarte una foto con la quinceañera
                             </p>
                         </div>
                     </div>
@@ -497,18 +529,18 @@
     <!-- Galería de fotos (reducida a 3 imágenes) -->
     <section class="py-16 bg-primary-white">
         <div class="container mx-auto px-4 section-container">
-            <h2 class="corinthia text-5xl accent-color text-center mb-12">Galería</h2>
+            <h2 class="festive text-5xl accent-color text-center mb-12">Galería</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="overflow-hidden rounded-2xl" data-aos="zoom-in">
-                    <img src="/mily/img/4.webp" alt="Mily"
+                    <img src="/mily/img/4.webp" alt="Sarai"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
                 <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="/mily/img/5.webp" alt="Mily"
+                    <img src="/mily/img/5.webp" alt="Sarai"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
                 <div class="overflow-hidden rounded-2xl" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="/mily/img/6.webp" alt="Mily"
+                    <img src="/mily/img/6.webp" alt="Sarai"
                         class="w-full h-auto object-contain transition-transform duration-500 hover:scale-105">
                 </div>
             </div>
@@ -518,7 +550,7 @@
     <!-- Footer -->
     <footer class="py-8 bg-pearl-gray text-center">
         <p class="text-dark-gray text-sm">Desarrollado por Yerba Digital | Publicado en momentoswow.com</p>
-        <p class="mt-2 great-vibes text-2xl accent-color">¡Te esperamos el 18 de Octubre de 2025!</p>
+        <p class="mt-2 festive text-2xl accent-color">¡Te esperamos el 18 de Octubre de 2025!</p>
     </footer>
 
     <script>
@@ -624,4 +656,3 @@
 </body>
 
 </html>
-```

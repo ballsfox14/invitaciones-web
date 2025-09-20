@@ -360,6 +360,66 @@
             font-size: 1.2rem;
             line-height: 1.6;
         }
+
+        /* Nuevos estilos para cards de evento con imagen de fondo */
+        .event-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .event-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(180, 196, 217, 0.85) 0%, rgba(180, 196, 217, 0.95) 100%);
+            z-index: 2;
+        }
+
+        .event-card-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            padding: 30px;
+            color: #4A5568;
+            width: 100%;
+        }
+
+        .event-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #4A5568;
+        }
+
+        .event-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4A5568;
+        }
     </style>
 </head>
 
@@ -478,46 +538,59 @@
             </p>
 
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="bg-card-blue rounded-2xl p-8 text-center shadow-sm border border-card text-card-dark">
-                    <div class="mb-6">
-                        <span class="material-icons text-5xl text-card-dark">church</span>
+                <!-- Ceremonia con imagen de fondo -->
+                <div class="event-card">
+                    <div class="event-card-bg" style="background-image: url('/mily/img/iglesia.webp')">
                     </div>
-                    <h3 class="card-title festive text-card-dark">Ceremonia</h3>
-                    <div class="flex items-center justify-center mb-3">
-                        <span class="material-icons text-card-dark mr-2">schedule</span>
-                        <p class="text-lg text-card-dark">4:00 p.m.</p>
+                    <div class="event-card-overlay"></div>
+                    <div class="event-card-content">
+                        <div class="mb-6">
+                            <span class="material-icons event-icon">church</span>
+                        </div>
+                        <h3 class="card-title festive text-card-dark">Ceremonia</h3>
+                        <div class="flex items-center justify-center mb-3">
+                            <span class="material-icons text-card-dark mr-2">schedule</span>
+                            <p class="text-lg text-card-dark">4:00 p.m.</p>
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <span class="material-icons text-card-dark mr-2">location_on</span>
+                            <p class="text-lg text-card-dark">Parroquia Señor de Ostúa, Metapán</p>
+                        </div>
+                        <a href="https://www.google.com/maps/place/Iglesia+de+Nuestro+Señor+de+Ostua/@14.3364732,-89.4508881,17z/data=!3m1!4b1!4m6!3m5!1s0x8f62544c4bda06e5:0x2885da4934a268a3!8m2!3d14.3364732!4d-89.4483132!16s%2Fg%2F11b8v0vq_q?entry=ttu"
+                            target="_blank"
+                            class="inline-flex items-center px-4 py-2 bg-white text-dark-gray rounded-full hover:bg-gray-100 transition duration-300 text-sm">
+                            <span class="material-icons mr-1 text-sm">map</span>
+                            Ver en mapa
+                        </a>
                     </div>
-                    <div class="flex items-center justify-center mb-6">
-                        <span class="material-icons text-card-dark mr-2">location_on</span>
-                        <p class="text-lg text-card-dark">Parroquia Señor de Ostúa, Metapán</p>
-                    </div>
-                    <a href="https://www.google.com/maps/place/Iglesia+de+Nuestro+Señor+de+Ostua/@14.3364732,-89.4508881,17z/data=!3m1!4b1!4m6!3m5!1s0x8f62544c4bda06e5:0x2885da4934a268a3!8m2!3d14.3364732!4d-89.4483132!16s%2Fg%2F11b8v0vq_q?entry=ttu"
-                        target="_blank"
-                        class="inline-flex items-center px-4 py-2 bg-white text-dark-gray rounded-full hover:bg-gray-100 transition duration-300 text-sm">
-                        <span class="material-icons mr-1 text-sm">map</span>
-                        Ver en mapa
-                    </a>
                 </div>
 
-                <div class="bg-card-blue rounded-2xl p-8 text-center shadow-sm border border-card text-card-dark">
-                    <div class="mb-6">
-                        <span class="material-icons text-5xl text-card-dark">celebration</span>
+                <!-- Recepción con imagen de fondo -->
+                <div class="event-card">
+                    <div class="event-card-bg" style="background-image: url('/mily/img/recepcion.webp')">
                     </div>
-                    <h3 class="card-title festive text-card-dark">Recepción</h3>
-                    <div class="flex items-center justify-center mb-3">
-                        <span class="material-icons text-card-dark mr-2">schedule</span>
-                        <p class="text-lg text-card-dark">5:00 p.m.</p>
+                    <div class="event-card-overlay"></div>
+                    <div class="event-card-content">
+                        <div class="mb-6">
+                            <span class="material-icons event-icon">celebration</span>
+                        </div>
+                        <h3 class="card-title festive text-card-dark">Recepción</h3>
+                        <div class="flex items-center justify-center mb-3">
+                            <span class="material-icons text-card-dark mr-2">schedule</span>
+                            <p class="text-lg text-card-dark">5:00 p.m.</p>
+                        </div>
+                        <div class="flex items-center justify-center mb-6">
+                            <span class="material-icons text-card-dark mr-2">location_on</span>
+                            <p class="text-lg text-card-dark">Casa Blanca, a un costado de la Iglesia San Pedro, Metapán
+                            </p>
+                        </div>
+                        <a href="https://www.google.com/maps/place/Casa+Blanca/@14.3325726,-89.4480282,19z/data=!3m1!4b1!4m6!3m5!1s0x8f62550009fcdd13:0x42e9cf0b83d94a44!8m2!3d14.3325726!4d-89.4474533!16s%2Fg%2F11s7s7w1y0?entry=ttu"
+                            target="_blank"
+                            class="inline-flex items-center px-4 py-2 bg-white text-dark-gray rounded-full hover:bg-gray-100 transition duration-300 text-sm">
+                            <span class="material-icons mr-1 text-sm">map</span>
+                            Ver en mapa
+                        </a>
                     </div>
-                    <div class="flex items-center justify-center mb-6">
-                        <span class="material-icons text-card-dark mr-2">location_on</span>
-                        <p class="text-lg text-card-dark">Casa Blanca, a un costado de la Iglesia San Pedro, Metapán</p>
-                    </div>
-                    <a href="https://www.google.com/maps/place/Casa+Blanca/@14.3325726,-89.4480282,19z/data=!3m1!4b1!4m6!3m5!1s0x8f62550009fcdd13:0x42e9cf0b83d94a44!8m2!3d14.3325726!4d-89.4474533!16s%2Fg%2F11s7s7w1y0?entry=ttu"
-                        target="_blank"
-                        class="inline-flex items-center px-4 py-2 bg-white text-dark-gray rounded-full hover:bg-gray-100 transition duration-300 text-sm">
-                        <span class="material-icons mr-1 text-sm">map</span>
-                        Ver en mapa
-                    </a>
                 </div>
             </div>
         </div>
@@ -528,12 +601,18 @@
         <div class="container mx-auto px-4 section-container" data-aos="fade-up">
             <h2 class="festive text-5xl accent-color text-center mb-8">Código de Vestimenta</h2>
 
-            <div class="dress-code-card max-w-md mx-auto">
-                <div class="mb-6">
-                    <span class="material-icons text-6xl text-card-dark">star</span>
+            <!-- Gala con imagen de fondo -->
+            <div class="event-card max-w-md mx-auto">
+                <div class="event-card-bg" style="background-image: url('/mily/img/gala.webp')">
                 </div>
-                <h3 class="dress-code-title festive text-card-dark">Gala</h3>
-                <p class="text-lg text-card-dark">Te invitamos a vestir con elegancia para esta ocasión tan especial</p>
+                <div class="event-card-overlay"></div>
+                <div class="event-card-content">
+                    <div class="mb-6">
+                        <span class="material-icons event-icon">star</span>
+                    </div>
+                    <h3 class="dress-code-title festive text-card-dark">Gala</h3>
+                    <p class="event-text">Te invitamos a vestir con elegancia para esta ocasión tan especial</p>
+                </div>
             </div>
         </div>
     </section>
@@ -568,20 +647,18 @@
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
                 <!-- Card de Sobres -->
                 <div class="detail-card">
-                    <div class="detail-card-bg"
-                        style="background-image: url('/mily/img/sobres.webp')">
+                    <div class="detail-card-bg" style="background-image: url('/mily/img/sobres.webp')">
                     </div>
                     <div class="detail-card-overlay"></div>
                     <div class="detail-card-content">
                         <span class="material-icons detail-icon">card_giftcard</span>
-                        <p class="detail-text">Agradecemos su muestra de cariño en sobres</p>
+                        <p class="detail-text">Agradecemos su muestra de cariño en sobre.</p>
                     </div>
                 </div>
 
                 <!-- Card de Fotos -->
                 <div class="detail-card">
-                    <div class="detail-card-bg"
-                        style="background-image: url('/mily/img/foto.webp')">
+                    <div class="detail-card-bg" style="background-image: url('/mily/img/foto.webp')">
                     </div>
                     <div class="detail-card-overlay"></div>
                     <div class="detail-card-content">
